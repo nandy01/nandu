@@ -9,6 +9,7 @@ public class UserController {
 	@RequestMapping("/")
 	public String goToWelcome()
 	{
+		System.out.println("Inside controller");
 		return "Welcome";
 	}
 	
