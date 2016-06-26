@@ -15,11 +15,12 @@ public class Logincontroller {
 	Userdao userdao;
 	@RequestMapping("/isvalidUser")
 	public ModelAndView showmessage(@RequestParam(value="name")String name,
-			@RequestParam(value="Password")String Password){
+			@RequestParam(value="password")String password){
 	System.out.println("is valid");
 	String message;
-	if (userdao.isvaliduser(name,Password))
+	if (userdao.isvaliduser(name,password))
 	{
+		
 		message="valid credentials";
 	}
 	else
@@ -32,4 +33,7 @@ public class Logincontroller {
     mv.addObject("name",name);
     return mv;
 }
-}
+
+	
+	}
+

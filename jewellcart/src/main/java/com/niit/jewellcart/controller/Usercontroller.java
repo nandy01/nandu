@@ -16,5 +16,6 @@ public String goToWelcome()
 		{
 			return "index";
 			}
+		
 					}
 

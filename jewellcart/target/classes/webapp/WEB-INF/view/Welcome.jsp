@@ -14,56 +14,78 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<style>
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('download.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+</style>
 
 
 </head>
 
 <body>
-	<!-- Navbar -->
-	<nav class="navbar navbar-inverse">
-
-	<div class="container-fluid">
-		
-		<div class="navbar-header"></div>
-		<ul class="nav navbar-nav">
-			<li class="#"><a href="#">Home</a></li>
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">Categories <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="Earrings.jsp">Earrings</a></li>
-					<li role="presentation" class="divider"></li>
-					<li><a href="Necklace.jsp">Necklaces</a></li>
-					<li role="presentation" class="divider"></li>
-					<li><a href="Rings and Bangles.jsp">Rings and Bangles</a></li>
-					<li role="presentation" class="divider"></li>
-					<li><a href="prod">Product</a></li>
-				</ul></li>
-	</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="Welcome">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Earrings">Earrings</a></li>
+            <li role="presentation class="divider"></li>
+            <li><a href="Necklaces">Neckalace</a></li>
+            <li role="presentation class="divider"></li>
+            <li><a href="Rings and Bangles">Rings and Bangles</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="Contact Us"><span
+				class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="index"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <center><form>
+  <input type="text" name="search" placeholder="Search..">
+</form></center>
 	
-	<center>
+
+	<div class="jumbotron" style="color: #FF00FF">
+		<center>
 			<h1>Women Contriving Zone</h1>
 		</center>
 		<center>
 			<p>Jewellery have the power to be this one little thing that can
 				make you feel unique</p>
 		</center>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="SignUp"> <span
-				class="glyphicon glyphicon-user">Signup</span></a></li>
-		<li><a href="index"> <span
-				class="glyphicon glyphicon-log-in">Login</span></a></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="Contact Us.jsp"><span
-				class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
-	</ul>
-	</div>
-
-
-	</nav>
-
-	
-		
 	
 
 	<div class="container">
@@ -81,7 +103,7 @@
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
 					<left>
-					<img src="<c:url value="/resource/image/bangle19.jpg" />" alt="" width="400" height="300"></left>
+					<img src=<c:url value="/resource/image/bangle19.jpg"/> alt="" width="400" height="300"></left>
 					<div class="carousel-caption">
 						<h3>Gorgeous</h3>
 						<p>Look and Feel Beautiful</p>
@@ -90,7 +112,7 @@
 
 				<div class="item">
 					<right>
-					<img src="<c:url value="/resource/image/aa.gif" />" alt="" width="400" height="300"></right>
+					<img src=<c:url value="/resource/image/aa.gif"/> alt="" width="400" height="300"></right>
 					<div class="carousel-caption">
 						<h3>Never Give Up</h3>
 						<p>Bracelets</p>
@@ -100,7 +122,7 @@
 
 				<div class="item">
 					<left>
-					<img src="<c:url value="/resource/image/2nbt27r.gif" />" width="400" height="300"></left>
+					<img src=<c:url value="/resource/image/2nbt27r.gif"/> alt="" width="400" height="300"></left>
 					<div class="carousel-caption">
 						<h3>Stunning</h3>
 						<p>Pearl Earrings</p>
@@ -109,7 +131,7 @@
 
 				<div class="item">
 					<right>
-					<img src="<c:url value="/resource/image/vv.gif" />" alt="" width="400" height="300"></right>
+					<img src=<c:url value="/resource/image/vv.gif"/> alt="" width="400" height="300"></right>
 					<div class="carousel-caption">
 						<h3>Necklace</h3>
 						<p>For Princess</p>
@@ -129,9 +151,9 @@
 			</a>
 		</div>
 	</div>
+</div>
 
-
-
+	
 
 </body>
 </html>
