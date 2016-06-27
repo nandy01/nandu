@@ -33,6 +33,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 		return l;
 		
 	}
+	@Transactional
 	public Category get(String id) {
 		String t="from Category where id"+id;
 		Query query=sessionFactory.getCurrentSession().createQuery(t);
@@ -40,10 +41,16 @@ public class CategoryDAOImpl implements CategoryDAO{
 		return null;
 	}
 	public void saveOrUpdate(Category category) {
+		
 		sessionFactory.getCurrentSession().saveOrUpdate(category);
 	}
+	@Transactional
 	public void delete(String id) {
-		// TODO Auto-generated method stub
+		System.out.println(id);
+	Category cat=new Category();
+	cat.setId(id);
+	sessionFactory.getCurrentSession().delete(cat);
+	
 		
 	}
 

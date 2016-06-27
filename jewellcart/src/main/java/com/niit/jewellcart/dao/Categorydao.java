@@ -37,6 +37,12 @@ public class Categorydao {
 
 		return list;
 	}
+
+	public void saveOrUpdate(Category category){
+	}
+	}
+		
+	
 	
 
 		
@@ -45,4 +51,4 @@ public class Categorydao {
 	
 	
 
-}
+

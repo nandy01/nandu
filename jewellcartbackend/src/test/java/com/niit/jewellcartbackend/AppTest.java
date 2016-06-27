@@ -7,40 +7,39 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import com.niit.jewellcartbackend.dao.CategoryDAO;
 import com.niit.jewellcartbackend.model.Category;
+
 public class AppTest {
 	static AnnotationConfigApplicationContext context;
 	static CategoryDAO categorydao;
-	public AppTest()
-	{
-		categorydao=(CategoryDAO) context.getBean("CategoryDAO");
-	}
-	
-    @SuppressWarnings("unchecked")
+
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
-	
+
 		context = new AnnotationConfigApplicationContext();
 		context.scan("com.niit.jewellcartbackend.config");
 		context.refresh();
+
+		CategoryDAO categoryDAO = (CategoryDAO) context.getBean("CategoryDao");
+		Category ca = (Category) context.getBean("category");
+
+		ca.setId("CAT3");
+		ca.setName("DiamondBangle");
+		ca.setDescription("Bangle product");
+		categoryDAO.saveOrUpdate(ca);
 		
-		AppTest app=new AppTest();
-		categorydao.delete("cat");
 		
+		categoryDAO.delete("cat");
+
 		System.out.println("helo");
-		
+
 		System.out.println("welcome into dao");
-		List<Category> li=new ArrayList<Category>();
-		li=categorydao.list();
-		for(Category c:li)
-		{
-			System.out.println(c.getId()+":"+c.getName()+":"+c.getDescription());
-			
-		}
-		
-		
-		
-		}
+		List<Category> li = new ArrayList<Category>();
+		li = categorydao.list();
+		for (Category c : li) {
+			System.out.println(c.getId() + ":" + c.getName() + ":" + c.getDescription());
 
-
+		}
 
 	}
 
+}

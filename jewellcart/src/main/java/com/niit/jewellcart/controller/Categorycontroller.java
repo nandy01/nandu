@@ -5,6 +5,7 @@ import java.util.List;
 import org.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,13 +24,20 @@ public class Categorycontroller {
 	 
 	
 	 Gson gson = new Gson();
-	obj= gson.toJson(categorylist);
+	 obj= gson.toJson(categorylist);
 
 	 mv.addObject("cat",obj);
      return mv;
 	
 	
 	}
+	
+	@RequestMapping("/addCategory")
+	public ModelAndView addCategory(@ModelAttribute Category category) {
+		categorydao.saveOrUpdate(category);
+	  return new ModelAndView("/adminHome");
+	 }
+	
 }
 
 
