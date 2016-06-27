@@ -13,6 +13,26 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<style>
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('download.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+</style>
 
 
 </head>
@@ -20,28 +40,36 @@
 <body>
 	<!-- Navbar -->
 	<nav class="navbar navbar-inverse">
-
-	<div class="container-fluid">
-		<h1>
-		<font face="Edwardian Script ITC" color=#CCFF33>
-         Welcome!!! ${sessionScope.User}</font></h1>
-		<div class="navbar-header"></div>
-		<ul class="nav navbar-nav">
-			<li class="#"><a href="#">Home</a></li>
-			<li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">Categories <span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="Earrings.jsp">Earrings</a></li>
-					<li role="presentation" class="divider"></li>
-					<li><a href="Necklace.jsp">Necklaces</a></li>
-					<li role="presentation" class="divider"></li>
-					<li><a href="Rings and Bangles.jsp">Rings and Bangles</a></li>
-				</ul></li>
-	</div>
-	<ul class="nav navbar-nav navbar-right">
-		<li><a href="Contact Us.jsp"><span
+	
+	
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="Welcome.jsp">Home</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Earrings.jsp">Earrings</a></li>
+            <li role="presentation class="divider"></li>
+            <li><a href="Necklaces.jsp">Neckalace</a></li>
+            <li role="presentation class="divider"></li>
+            <li><a href="Rings and Bangles.jsp">Rings and Bangles</a></li>
+          </ul>
+        </li>
+        
+        <li><a href="Contact Us"><span
 				class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
-	</ul>
+      </ul>
+
+	
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href="SignUp.jsp"> <span
 				class="glyphicon glyphicon-user">Signup</span></a></li>
@@ -49,19 +77,24 @@
 				class="glyphicon glyphicon-log-in">Login</span></a></li>
 	</ul>
 	</div>
+</div>
 
-
-	</nav>
+	
+    </nav>
+    <center><form>
+  <input type="text" name="search" placeholder="Search..">
+</form></center>
+	
 
 	<div class="jumbotron" style="color: #FF00FF">
 		<center>
-			<h1>Women Fashion Zone</h1>
+			<h1>Women Contriving Zone</h1>
 		</center>
 		<center>
 			<p>Jewellery have the power to be this one little thing that can
 				make you feel unique</p>
 		</center>
-	</div>
+	
 
 	<div class="container">
 
@@ -126,7 +159,13 @@
 			</a>
 		</div>
 	</div>
-
+</div>
+<div class="panel panel-default">
+  
+  <div class="panel-footer">
+ <tab2 id="t1">Women Contiving Zone</tab2> 
+ </div>
+ </div>
 
 
 

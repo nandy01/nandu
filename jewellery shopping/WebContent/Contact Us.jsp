@@ -47,14 +47,14 @@
 	<div class="container">
   <h1>Contact Us</h1>
   <form class="form-inline" role="form">
-    <div class="form-group">
-      <label for="email">Email:</label>
+    <tr><div class="form-group">
+     <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email">
-    </div><br><br>
-    <div class="form-group">
+    </div><br><br></tr>
+   <tr> <div class="form-group">
       <label for="pwd">Password:</label>
       <input type="password" class="form-control" id="pwd" placeholder="Enter password">
-    </div>
+    </div></tr>
 	
 
 </body>

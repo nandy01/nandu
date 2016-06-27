@@ -15,25 +15,24 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-	<style type=>
-	body
-.h-divider{
- margin-top:5px;
- margin-bottom:5px;
- height:1px;
- width:100%;
- border-top:1px solid gray;
- 
-}
-body
+	<style>
+hr {
+    display:white;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
 </style>
+
 </head>
 <body>
 
 ${requestScope.id} ${requestScope.leaf}
 	${requestScope.lring} ${requestScope.pearl} ${requestScope.ring}
-<div class="h-divider">
-</div>
+<hr>
+
 
 </body>
 </html>

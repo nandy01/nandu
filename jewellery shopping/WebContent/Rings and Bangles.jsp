@@ -66,7 +66,7 @@
       </a>
    </div>
    <div class = "col-sm-6 col-md-3">
-      <a href = "Prodservlet" class = "thumbnail">
+      <a href = "ring.jsp" class = "thumbnail">
          <img src = "image/m.jpg" alt = "thumbnail" width="200" height="100">
       </a>
    </div>
