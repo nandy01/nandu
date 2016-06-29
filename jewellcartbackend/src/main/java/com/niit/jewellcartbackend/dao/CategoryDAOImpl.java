@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.jewellcartbackend.model.Category;
 
-@Repository("CategoryDAO")
+@Repository("CategoryDao")
 public class CategoryDAOImpl implements CategoryDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
@@ -42,14 +42,16 @@ public class CategoryDAOImpl implements CategoryDAO{
 	}
 	public void saveOrUpdate(Category category) {
 		
-		sessionFactory.getCurrentSession().saveOrUpdate(category);
+		Session s=sessionFactory.openSession();
+		s.saveOrUpdate(category);
+		s.flush();
 	}
 	@Transactional
 	public void delete(String id) {
 		System.out.println(id);
-	Category cat=new Category();
-	cat.setId(id);
-	sessionFactory.getCurrentSession().delete(cat);
+	Category cat1=new Category();
+	cat1.setId(id);
+	sessionFactory.getCurrentSession().delete(cat1);
 	
 		
 	}

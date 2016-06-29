@@ -62,10 +62,15 @@ input[type=text]:focus {
             <li><a href="Necklaces.jsp">Neckalace</a></li>
             <li role="presentation class="divider"></li>
             <li><a href="Rings and Bangles.jsp">Rings and Bangles</a></li>
+            <h2>
+		
+           
           </ul>
         </li>
+        <font face="Edwardian Script ITC" color=#CCFF33>
+         Welcome!!! ${sessionScope.User}</font></h2>
         
-        <li><a href="Contact Us"><span
+        <li><a href="Contact Us.jsp"><span
 				class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
       </ul>
 

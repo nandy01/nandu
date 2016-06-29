@@ -60,6 +60,8 @@ input[type=text]:focus {
             <li><a href="Necklaces">Neckalace</a></li>
             <li role="presentation class="divider"></li>
             <li><a href="Rings and Bangles">Rings and Bangles</a></li>
+            <li role="presentation class="divider"></li>
+            <li><a href="prod">Categoriesinfo</a></li>
           </ul>
         </li>
         

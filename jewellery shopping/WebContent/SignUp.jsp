@@ -15,7 +15,7 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <style>
 body {
-    background-color: lightblue;
+    background-color: lightyellow;
 }
 body
 </style>

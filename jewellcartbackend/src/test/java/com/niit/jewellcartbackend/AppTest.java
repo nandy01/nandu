@@ -20,7 +20,7 @@ public class AppTest {
 		context.refresh();
 
 		CategoryDAO categoryDAO = (CategoryDAO) context.getBean("CategoryDao");
-		Category ca = (Category) context.getBean("category");
+		Category ca=new Category();
 
 		ca.setId("CAT3");
 		ca.setName("DiamondBangle");
@@ -28,7 +28,7 @@ public class AppTest {
 		categoryDAO.saveOrUpdate(ca);
 		
 		
-		categoryDAO.delete("cat");
+		categoryDAO.delete("cat1");
 
 		System.out.println("helo");
 
