@@ -16,7 +16,16 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.jewellcartbackend.dao.CategoryDAO;
 import com.niit.jewellcartbackend.dao.CategoryDAOImpl;
+import com.niit.jewellcartbackend.dao.ProductDAO;
+import com.niit.jewellcartbackend.dao.ProductDAOImpl;
+import com.niit.jewellcartbackend.dao.SupplierDAO;
+import com.niit.jewellcartbackend.dao.SupplierDAOImpl;
+import com.niit.jewellcartbackend.dao.UserDAO;
+import com.niit.jewellcartbackend.dao.UserDAOImpl;
 import com.niit.jewellcartbackend.model.Category;
+import com.niit.jewellcartbackend.model.Product;
+import com.niit.jewellcartbackend.model.Supplier;
+import com.niit.jewellcartbackend.model.User;
 
 @Configuration
 @ComponentScan("com.niit.jewellcartbackend.model")
@@ -44,10 +53,15 @@ public class ApplicationContextConfig {
     	@Autowired
     	@Bean(name = "sessionFactory")
         public SessionFactory getSessionFactory(DataSource dataSource) {
+    		System.out.println("hi");
         	LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
         	sessionBuilder.addProperties(getHibernateProperties());
         	sessionBuilder.addAnnotatedClasses(Category.class);
-            return sessionBuilder.buildSessionFactory();
+        	sessionBuilder.addAnnotatedClasses(Supplier.class);
+        	sessionBuilder.addAnnotatedClasses(Product.class);
+        	sessionBuilder.addAnnotatedClasses(User.class);
+        	System.out.println("go");
+        	return sessionBuilder.buildSessionFactory();
     	
     }
 	@Autowired
@@ -71,6 +85,20 @@ public class ApplicationContextConfig {
 	
 
 }
+	@Autowired
+	@Bean(name = "supplierDao")
+    public SupplierDAO getSupplierdao(SessionFactory sessionFactory) {
+		return new SupplierDAOImpl(sessionFactory);
+	}
+	@Autowired
+	@Bean(name = "productDao")
+    public ProductDAO getProductdao(SessionFactory sessionFactory) {
+		return new ProductDAOImpl(sessionFactory);
+	}
+	@Autowired
+	@Bean(name = "userDao")
+    public UserDAO getUserdao(SessionFactory sessionFactory) {
+		return new UserDAOImpl(sessionFactory);
+	}
 }
-
 

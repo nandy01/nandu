@@ -35,8 +35,16 @@ public class CategoryDAOImpl implements CategoryDAO{
 	}
 	@Transactional
 	public Category get(String id) {
-		String t="from Category where id"+id;
+		String t="from Category where id=" + "'"+ id +"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(t);
+		
+	@SuppressWarnings("unchecked")
+		List<Category> listCategory = (List<Category>) query.list();
+		
+		if(listCategory !=null && !listCategory.isEmpty()){
+			return listCategory.get(0);
+			
+		}
 		
 		return null;
 	}
@@ -55,6 +63,8 @@ public class CategoryDAOImpl implements CategoryDAO{
 	
 		
 	}
+	
+	
 
 }
 

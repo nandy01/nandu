@@ -32,12 +32,6 @@ public class Categorycontroller {
 	
 	}
 	
-	@RequestMapping("/addCategory")
-	public ModelAndView addCategory(@ModelAttribute Category category) {
-		categorydao.saveOrUpdate(category);
-	  return new ModelAndView("/adminHome");
-	 }
-	
 }
 
 

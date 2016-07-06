@@ -1,57 +1,89 @@
 package com.niit.jewellcartbackend.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Criteria;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.niit.jewellcartbackend.model.Supplier;
 import com.niit.jewellcartbackend.model.User;
 
-@Repository("Userdao")
-public class UserdaoImpl implements Userdao{
+@Repository("userDao")
+public class UserDAOImpl implements UserDAO{
 	@Autowired
 	private SessionFactory sessionFactory;
 
 
-	public UserdaoImpl(SessionFactory sessionFactory) {
+	public UserDAOImpl(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
-    @Transactional
+    @SuppressWarnings("unchecked")
+	@Transactional
 	public List<User> list() {
-		@SuppressWarnings({ "unchecked", "deprecation" })
-		List<User> list = (List<User>) sessionFactory.getCurrentSession()
-		.createCriteria(User.class)
-		.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-		
-		return list;
+    	System.out.println("list");
+		Session s=sessionFactory.getCurrentSession();
+		Criteria q=s.createCriteria(User.class);
+		List<User> l=new ArrayList<User>();
+		l=q.list();
+		return l;
 	}
-
+@Transactional
 	public User get(String id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
-
+@Transactional
 	public void saveOrUpdate(User user) {
-		// TODO Auto-generated method stub
+		Session s=sessionFactory.openSession();
+		s.saveOrUpdate(user);
+		s.flush();
 		
 	}
-
+@Transactional
 	public void delete(String id) {
-		// TODO Auto-generated method stub
+		Supplier niit = new Supplier();
+		niit.setId(id);
+		sessionFactory.getCurrentSession().delete(niit);
+		
 		
 	}
-
+@Transactional
 	public boolean isValidUser(String id, String name, boolean isAdmin) {
 		// TODO Auto-generated method stub
 		return false;
 	}
 
+	/*public boolean isValidUser(String id, String name, boolean isAdmin) {
+		String hql = "from User where id= '" + id + "' and " + " password ='" + password+"'";
+		Query query =sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) query.list();
+		
+		if (list != null && !list.isEmpty()) {
+			return true;
+		}
+		
+		
+
+
+		
+		return false;
+	}*/
+
+	
+	}
+
 
 	
 	
 
-}
+

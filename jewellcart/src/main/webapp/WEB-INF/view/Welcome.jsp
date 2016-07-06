@@ -22,7 +22,7 @@ input[type=text] {
     border-radius: 4px;
     font-size: 16px;
     background-color: white;
-    background-image: url('download.png');
+    background-image: url('');
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
@@ -69,7 +69,7 @@ input[type=text]:focus {
 				class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="SignUp"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="SignUp"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
         <li><a href="index"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>

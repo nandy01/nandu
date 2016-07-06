@@ -1,17 +1,20 @@
 package com.niit.jewellcartbackend.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Query;
+import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.niit.jewellcartbackend.model.Category;
 import com.niit.jewellcartbackend.model.Supplier;
 
-@Repository
+@Repository("supplierDao")
 public class SupplierDAOImpl implements SupplierDAO {
 	
 	@Autowired
@@ -23,46 +26,47 @@ public class SupplierDAOImpl implements SupplierDAO {
 	}
 
 @Transactional
-	public List<Supplier> list() {
+	
 		
 		@SuppressWarnings("unchecked")
-		List<Supplier> list = (List<Supplier>) sessionFactory.getCurrentSession()
-				.createCriteria(Supplier.class)
-				.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-
-		return list;
-	}
+public List<Supplier> list() {
+			System.out.println("list");
+			Session s=sessionFactory.getCurrentSession();
+			Criteria q=s.createCriteria(Supplier.class);
+			List<Supplier> l=new ArrayList<Supplier>();
+			l=q.list();
+			return l;
+		}	
 	
 
+	
 
+@Transactional
 	public Supplier get(String id) {
-		String hql = "from Supplier where id=" + id;
-		Query query = sessionFactory.getCurrentSession().createQuery(hql);
 		
-		@SuppressWarnings("unchecked")
-		List<Supplier> list = (List<Supplier>) query.list();
-		
-		if (list != null && !list.isEmpty()) {
-			return list.get(0);
-		}
 		
 		
 		return null;
 	}
 
-
+@Transactional
 	public void saveOrUpdate(Supplier supplier) {
-		sessionFactory.getCurrentSession().saveOrUpdate(supplier);
+		Session s=sessionFactory.openSession();
+		s.saveOrUpdate(supplier);
+		s.flush();
+		
 	}
+	
 		
 	
 
-
+@Transactional
 	public void delete(String id) {
-		Supplier supplier = new Supplier();
-		supplier.setId(id);
-		sessionFactory.getCurrentSession().delete(supplier);
+		Supplier sup1 = new Supplier();
+		sup1.setId(id);
+		sessionFactory.getCurrentSession().delete(sup1);
 		
 	}
+
 
 }

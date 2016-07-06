@@ -8,12 +8,12 @@ import javax.persistence.Table;
 import org.springframework.stereotype.Component;
 
 @Entity
-@Table(name="User")
+@Table(name="USER")
 @Component
 public class User {
 	@Id
+	@Column(name="id")
 	private String id;
-	private String password;
 	public String getId() {
 		return id;
 	}
@@ -26,7 +26,30 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	public String getMailid() {
+		return mailid;
+	}
+	public void setMailid(String mailid) {
+		this.mailid = mailid;
+	}
 	
+	private String password;
+
+	private String address;
+	private String mailid;
+	private int contactnumber;
+	public int getContactnumber() {
+		return contactnumber;
+	}
+	public void setContactnumber(int contactnumber) {
+		this.contactnumber = contactnumber;
+	}
 	
 	
 }
