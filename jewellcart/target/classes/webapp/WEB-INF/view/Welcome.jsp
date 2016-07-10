@@ -170,60 +170,66 @@ t1 {
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4">
-				<strong>HELP</strong>
-				<p>Shipping</p>
+				<strong>NEED HELP?</strong>
+				<a href="shipping"><p>Shipping</p></a>
 				<hr>
-				<p>FAQ</p>
+				<a href="FAQ"> <p>FAQ</p></a>
 				<hr>
-				<p>Payments</p>
+				<a href=cart><p>Payments</p></a>
 
 			</div>
 			<div class="col-sm-4">
 				<strong>FASHION WORLD</strong>
-				<p>Contact Us</p>
+			<a href=Contact Us><p>Contact Us</p></a>
 				<hr>
-				<p>About US</p>
+				<a href="aboutus"><p>About US</p></a><hr>
+				<a href="giftcard"><p>GiftCard<p></a>
 
 			</div>
+			
 			<div class="col-sm-4">
-				<strong>MISC</strong>
-				<p>Gift Cards</p>
-				<hr>
-				<p>Vouchers</p>
-
+				<strong>BE CONNECTED</strong><br>
+				<button style="font-size:24px"><i class="fa fa-facebook-square"></i></button>
+				<button style="font-size:24px"><i class="fa fa-google-plus-square"></i></button><br><br>
+				<button style="font-size:24px"> <i class="fa fa-pinterest-square"></i></button>
+				<button style="font-size:24px"> <i class="fa fa-twitter-square"></i></button>
+				
+				
 			</div>
+			</div>
+			
 
 
 
 		</div>
-	</div>
+	
 
 
 	<hr>
-	<center><p>&copy; 2016 WomenContrivingZone.com</p></center>
-	<hr>
+	
 	<div class="container">
 		<div class="row">
 			<div class="col-md-4">
 				<h3>
-					<span class="glyphicon  glyphicon-map-marker	"></span> <span
-						class="text"> TRACK YOUR ORDER</span>
+				<a href="cart">
+					<span class="glyphicon  glyphicon-map-marker"></span> <span
+						class="text"> <font color="black">TRACK YOUR ORDER</font></span></a>
 				</h3>
 			</div>
 			<div class="col-md-4">
 				<h3>
 
-
-					<i class="glyphicon  glyphicon-refresh"></i> <span class="text">FREE
-						AND EASY RETURNS </span>
-					</t1>
+<a href="cart">
+					<i class="glyphicon  glyphicon-refresh"></i> <span class="text"><font color="black">FREE
+						AND EASY RETURNS </font></span></a>
+					
 				</h3>
 			</div>
 
 			<div class="col-md-4">
-				<h3>
+				<h3><a href="Welcome">
 					<span class="glyphicon glyphicon-remove-circle"></span> <span
-						class="text">ONLINE CANCELLATION </span>
+						class="text"><font color="black">ONLINE CANCELLATION </font></span></a>
 				</h3>
 			</div>
 		</div>
@@ -294,5 +300,8 @@ t1 {
 				avails return and replacement policies for a convenient shopping.
 			</p>
 	</div>
+	<hr>
+	<center><p>&copy; 2016 WomenContrivingZone.com</p></center>
+	
 </body>
 </html>

@@ -14,12 +14,36 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <style>
-body {
-    background-color: lightyellow;
+
+   body{
+ 
+
+ 
+ /* Safari 4-5, Chrome 1-9 */
+    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
+
+ 
+ 
 }
-body
+
+.centered-form{
+	margin-top: 60px;
+}
+
+.centered-form .panel{
+	background: rgba(255, 255, 255, 0.8);
+	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
+}
+label.label-floatlabel {
+    font-weight: bold;
+    color: #46b8da;
+    font-size: 11px;
+}
+
+
+
 </style>
-<title>Insert title here</title>
+<title>SignUp</title>
 </head>
 <body>
 <!-- Navbar -->
@@ -38,6 +62,8 @@ body
           <li><a href="Necklace">Necklace</a></li>
            <li role="presentation" class="divider"></li>
           <li><a href="Earrings">Earring</a></li> 
+          <li role="presentation class="divider"></li>
+						<li><a href="categorylist">Categoriesinfo</a></li>
         </ul>
       </li>
         <li><a href="Contact Us"><span class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
@@ -51,69 +77,86 @@ body
 
 	</nav>
 
-
 <div class="container">
-  <div class="row">
-  	<div class="col-md-6">
-    
-          <form class="form-horizontal" action="" method="POST">
-          <fieldset>
-            <div id="legend">
-            
-              <legend class="">Register!!!</legend>
-              </div>
-              <div
-				class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-            </div>
-            <div class="control-group">
-              <label class="control-label" for="username">Username</label>
-              <div class="controls">
-                <input type="text" id="username" name="username" placeholder="" class="form-control input-lg" required="">
-                <p class="help-block">Username can contain any letters or numbers, without spaces</p>
-              </div>
-            </div>
-         
-            <div class="control-group">
-              <label class="control-label" for="email">E-mail</label>
-              <div class="controls">
-                <input type="email" id="email" name="email" placeholder="" class="form-control input-lg" required="">
-                <p class="help-block">Please provide your E-mail</p>
-              </div>
-            </div>
-         
-            <div class="control-group">
-              <label class="control-label" for="password">Password</label>
-              <div class="controls">
-                <input type="password" id="password" name="password" placeholder="" class="form-control input-lg" required="">
-                <p class="help-block">Password should be at least 6 characters</p>
-              </div>
-            </div>
-         
-            <div class="control-group">
-              <label class="control-label" for="password_confirm">Password (Confirm)</label>
-              <div class="controls">
-                <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="form-control input-lg" required="">
-                <p class="help-block">Please confirm password</p>
-              </div>
-            </div>
-         
-            <div class="control-group">
-              <!-- Button -->
-              <div class="controls">
-                <button class="btn btn-success">Register</button>
-              </div>
-            </div>
-          </fieldset>
-        </form>
-    
-    </div> 
-  </div>
+        <div class="row centered-form">
+        <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+        	<div class="panel panel-default">
+        		<div class="panel-heading">
+			    		<h3 class="panel-title">Please sign up  <h4><font color="blue">It's free!</font></h4></h3>
+			 			</div>
+			 			<div class="panel-body">
+			    		<form role="form">
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			                <input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="First Name" required="true">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name" required="true">
+			    					</div>
+			    				</div>
+			    			</div>
 
+			    			<div class="form-group">
+			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" required="true">
+			    			</div>
 
- <div class="panel-footer">
- <tab2 id="t1">Gorgeous Jewellery</tab2> 
- <tab1>
-   www.Women Contiving Zone.com</tab1></div>
+			    			<div class="row">
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" required="true">
+			    					</div>
+			    				</div>
+			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    					<div class="form-group">
+			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password" required="true">
+			    					</div>
+			    				</div>
+			    			</div>
+			    			<div class="form-group">
+     
+     <div class="col-md-8 ">
+       <label>
+          <input type="radio" name="gender">
+             Male
+          </label>
+       <label>
+          <input type="radio" name="gender">
+          Female
+       </label>
+     </div>
+ </div>
+			    			<script>
+function myFunction() {
+    var x = document.getElementById("myDate").value;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+			    			<div class="form-group">
+			    			<input type="date" id="myDate" value="yy-mm-dd"  class="form-control input-sm">
 </div>
+			    			 <div class="col-md-8">
+        <div class="checkbox">
+          
+             
+             <input type="checkbox">
+             I agree to the Terms of Use<br>
+        <a href="index">    Already Register? Login here</a>
+         
+        </div>
+    </div>
+ </div>
+ <div class="form-group">
+			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    		
+			    		
+			    	</div>
+	    		</div>
+    		</div>
+    	</div>
+    </div>
+
 </body>
 </html>

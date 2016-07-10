@@ -60,8 +60,11 @@ public class Logincontroller {
 	{
 		return "Contact Us";
 		}
-	
-
+	@RequestMapping("/adminHome")
+public String gotoadminHome()
+{
+		return "admin Home";
+}
 	
 	}
 
