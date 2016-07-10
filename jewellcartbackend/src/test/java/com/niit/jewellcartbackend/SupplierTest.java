@@ -5,9 +5,7 @@ import java.util.List;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import com.niit.jewellcartbackend.dao.CategoryDAO;
 import com.niit.jewellcartbackend.dao.SupplierDAO;
-import com.niit.jewellcartbackend.model.Category;
 import com.niit.jewellcartbackend.model.Supplier;
 
 public class SupplierTest {
@@ -24,8 +22,7 @@ public class SupplierTest {
 
 		sup.setId("CAT3");
 		sup.setName("DiamondBangle");
-		sup.setDescription("This is Bangle");
-		sup.setAddress("aa");
+		
 		supplierDAO.saveOrUpdate(sup);
 		
 		
@@ -34,7 +31,7 @@ public class SupplierTest {
 		List<Supplier> li = new ArrayList<Supplier>();
 		li = supplierDAO.list();
 		for (Supplier s : li) {
-			System.out.println(s.getId() + ":" + s.getName() + ":" +":"+s.getAddress()+":"+s.getDescription());
+			System.out.println(s.getId() + ":" + s.getName()+":"+s.getAddress()+":"+s.getAddress());
 
 
 }

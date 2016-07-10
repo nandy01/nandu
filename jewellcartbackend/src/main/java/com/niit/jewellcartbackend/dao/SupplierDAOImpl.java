@@ -42,12 +42,21 @@ public List<Supplier> list() {
 	
 
 @Transactional
-	public Supplier get(String id) {
+public Supplier get(String id) {
+	String t="from Supplier where id=" + "'"+ id +"'";
+	Query query=sessionFactory.getCurrentSession().createQuery(t);
+	
+@SuppressWarnings("unchecked")
+	List<Supplier> listSupplier = (List<Supplier>) query.list();
+	
+	if(listSupplier !=null && !listSupplier.isEmpty()){
+		return listSupplier.get(0);
 		
-		
-		
-		return null;
 	}
+	
+	return null;
+}
+
 
 @Transactional
 	public void saveOrUpdate(Supplier supplier) {

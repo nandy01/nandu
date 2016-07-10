@@ -5,12 +5,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.Criteria;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.niit.jewellcartbackend.model.Category;
 import com.niit.jewellcartbackend.model.Product;
 @Repository("productDao")
 public class ProductDAOImpl implements ProductDAO {
@@ -40,12 +42,22 @@ public class ProductDAOImpl implements ProductDAO {
 
 	@Transactional
 		public Product get(String id) {
+		
+			String t="from Product where id=" + "'"+ id +"'";
+			Query query=sessionFactory.getCurrentSession().createQuery(t);
+			
+		@SuppressWarnings("unchecked")
+			List<Product> listProduct = (List<Product>) query.list();
+			
+		if(listProduct !=null && !listProduct.isEmpty()){
+			return listProduct.get(0);
 			
 			
 			
-			return null;
+			
 		}
-
+		return null;
+	}
 	@Transactional
 		public void saveOrUpdate(Product product) {
 			Session s=sessionFactory.openSession();
