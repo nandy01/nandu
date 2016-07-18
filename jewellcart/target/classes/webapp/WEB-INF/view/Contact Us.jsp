@@ -103,7 +103,7 @@ label.label-floatlabel {
   <label for="comment"><t2>Comment:</t2></label></div>
   <div class=""><textarea class="form-control" rows="7" id="comment"></textarea></div><br>
   <div class="form-group">
-			    			<input type="submit" value="Send Message" class="btn btn-info btn-block">
+			    			<a href="emailForm"><input type="submit" value="Send Message" class="btn btn-info btn-block"></a>
 			    		
 			    		
 			    	</div>

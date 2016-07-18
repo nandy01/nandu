@@ -42,7 +42,7 @@ public List<Supplier> list() {
 	
 
 @Transactional
-public Supplier get(String id) {
+public Supplier get(int id) {
 	String t="from Supplier where id=" + "'"+ id +"'";
 	Query query=sessionFactory.getCurrentSession().createQuery(t);
 	
@@ -70,12 +70,14 @@ public Supplier get(String id) {
 	
 
 @Transactional
-	public void delete(String id) {
+	public void delete(int id) {
 		Supplier sup1 = new Supplier();
 		sup1.setId(id);
 		sessionFactory.getCurrentSession().delete(sup1);
 		
 	}
+
+
 
 
 }

@@ -5,6 +5,8 @@
 <head>
 <title>SignUp</title>
 <meta charset="utf-8">
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet"
@@ -18,14 +20,9 @@
    body{
  
 
+ background-repeat:no-repeat
  
- /* Safari 4-5, Chrome 1-9 */
-    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
-
- 
- 
-}
-
+   
 .centered-form{
 	margin-top: 60px;
 }
@@ -45,37 +42,12 @@ label.label-floatlabel {
 </style>
 <title>SignUp</title>
 </head>
-<body>
-<!-- Navbar -->
-	<nav class="navbar navbar-inverse">
+<body background=<c:url value="resource/image/dia_carat.jpg"/>>
 
-	<div class="container-fluid">
-		<div class="navbar-header"></div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="Welcome">Home</a></li>
-			<li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories
-        <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="Bangles">Bangles</a></li>
-          <li role="presentation" class="divider"></li>
-          <li><a href="Necklace">Necklace</a></li>
-           <li role="presentation" class="divider"></li>
-          <li><a href="Earrings">Earring</a></li> 
-          <li role="presentation class="divider"></li>
-						<li><a href="categorylist">Categoriesinfo</a></li>
-        </ul>
-      </li>
-        <li><a href="Contact Us"><span class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-					<li><a href="SignUp"> <span class="glyphicon glyphicon-user">Signup</span></a></li>
-					<li><a href="index"> <span class="glyphicon glyphicon-log-in">Login</span></a></li>
-				</ul>
-				</div>
+<jsp:include page="header.jsp" />  
 	
-
-	</nav>
+                        <form:form action="adduser" method="POST" >
+	
 
 <div class="container">
         <div class="row centered-form">
@@ -85,49 +57,93 @@ label.label-floatlabel {
 			    		<h3 class="panel-title">Please sign up  <h4><font color="blue">It's free!</font></h4></h3>
 			 			</div>
 			 			<div class="panel-body">
-			    		<form role="form">
+			    		
 			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    				
 			    					<div class="form-group">
-			                <input type="text" name="first_name" id="first_name" class="form-control input-sm floatlabel" placeholder="First Name" required="true">
+			                <input type="text" name="username" id="username" class="form-control input-sm floatlabel" placeholder="First Name" required="true">
 			    					</div>
 			    				</div>
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
-			    					<div class="form-group">
-			    						<input type="text" name="last_name" id="last_name" class="form-control input-sm" placeholder="Last Name" required="true">
-			    					</div>
-			    				</div>
+			    				
 			    			</div>
+			    			<!-- to display validation messages -->
+				<c:forEach
+					items="${flowRequestContext.messageContext.getMessagesBySource('name')}"
+					var="err">
+					<div>
+						<span>${err.text}</span>
+					</div>
+				</c:forEach>
+			    			
 
 			    			<div class="form-group">
 			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" required="true">
 			    			</div>
+			    			<!-- to display validation messages -->
+				<c:forEach
+					items="${flowRequestContext.messageContext.getMessagesBySource('name')}"
+					var="err">
+					<div>
+						<span>${err.text}</span>
+					</div>
+				</c:forEach>
+			    			
 
 			    			<div class="row">
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    			
 			    					<div class="form-group">
 			    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" required="true">
 			    					</div>
 			    				</div>
-			    				<div class="col-xs-6 col-sm-6 col-md-6">
+			    				<!-- to display validation messages -->
+				<c:forEach
+					items="${flowRequestContext.messageContext.getMessagesBySource('name')}"
+					var="err">
+					<div>
+						<span>${err.text}</span>
+					</div>
+				</c:forEach>
+			    				
+			    				<div class="form-group">
+			    						<input type="text" name="mobile" id="mobile" class="form-control input-sm" placeholder="Mobile" required="true">
+			    					</div>
+			    				
 			    					<div class="form-group">
-			    						<input type="password" name="password_confirmation" id="password_confirmation" class="form-control input-sm" placeholder="Confirm Password" required="true">
+			    						<input type="text" name="address" id="address" class="form-control input-sm" placeholder="Address" required="true">
 			    					</div>
 			    				</div>
 			    			</div>
+			    			<!-- to display validation messages -->
+				<c:forEach
+					items="${flowRequestContext.messageContext.getMessagesBySource('name')}"
+					var="err">
+					<div>
+						<span>${err.text}</span>
+					</div>
+				</c:forEach>
+			    			
 			    			<div class="form-group">
      
      <div class="col-md-8 ">
        <label>
-          <input type="radio" name="gender">
+          <input type="radio" name="gender" value="M">
              Male
           </label>
        <label>
-          <input type="radio" name="gender">
+          <input type="radio" name="gender" value="F">
           Female
        </label>
      </div>
  </div>
+ <!-- to display validation messages -->
+				<c:forEach
+					items="${flowRequestContext.messageContext.getMessagesBySource('name')}"
+					var="err">
+					<div>
+						<span>${err.text}</span>
+					</div>
+				</c:forEach>
+ 
 			    			<script>
 function myFunction() {
     var x = document.getElementById("myDate").value;
@@ -135,7 +151,7 @@ function myFunction() {
 }
 </script>
 			    			<div class="form-group">
-			    			<input type="date" id="myDate" value="yy-mm-dd"  class="form-control input-sm">
+			    			<input type="date" id="myDate" value="yy-mm-dd" name="dob" class="form-control input-sm" required="true">
 </div>
 			    			 <div class="col-md-8">
         <div class="checkbox">
@@ -148,15 +164,25 @@ function myFunction() {
         </div>
     </div>
  </div>
+ <c:forEach
+					items="${flowRequestContext.messageContext.getMessagesBySource('address')}"
+					var="err">
+					<div>
+						<span>${err.text}</span>
+					</div>
+				</c:forEach>
+				<br>
  <div class="form-group">
-			    			<input type="submit" value="Register" class="btn btn-info btn-block">
+			    			<input type="submit" name="_eventId_submit" value="Register" class="btn btn-info btn-block">
 			    		
 			    		
 			    	</div>
+			    	
+			    	
 	    		</div>
-    		</div>
-    	</div>
-    </div>
-
+	    		
+	    		
+ 
+</form:form>
 </body>
 </html>

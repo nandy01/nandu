@@ -56,7 +56,7 @@ function myFunction() {
 						<li role="presentation class="divider"></li>
 						<li><a href="Rings and Bangles">Rings and Bangles</a></li>
 						<li role="presentation class="divider"></li>
-						<li><a href="categorylist">Categoriesinfo</a></li>
+						<li><a href="adminHome">Categoriesinfo</a></li>
 					</ul></li>
 
 				<li><a href="Contact Us"><span
@@ -71,10 +71,10 @@ function myFunction() {
 		</div>
 	</div>
 	</nav>
-<a href ="categorylist">Categories</a> | <a href="productlist">Products</a> | <a href ="supplierlist">Suppliers</a>
+<a href ="categorylist">Categories</a> | <a href="productlist">Products</a> | <a href ="supplierlist">Suppliers</a>  
 	
+	<center><h1><button type="button" class="btn btn-success">Suppliers Information</button></h1></center>
 	
-	<h1>Add a Supplier </h1>
 
 	<c:url var="addAction" value="/supplierlist/add"></c:url>
 
@@ -100,6 +100,12 @@ function myFunction() {
 						<spring:message text="Name" />
 					</form:label></td>
 				<td><form:input path="name" required="true" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="address">
+						<spring:message text="Address" />
+					</form:label></td>
+				<td><form:input path="address" required="true" /></td>
 			</tr>
 			
 			<tr>
@@ -128,7 +134,7 @@ function myFunction() {
 							<th>ID</th>
 							<th>Name</th>
 							<th>Address</th>
-							<th>Description</th>
+						
 							<th align="left">Edit</th>
 		                    <th align="left">Delete</th>
 						</tr>
@@ -141,7 +147,7 @@ function myFunction() {
 			<td>${supplier.id}</td>
 			<td>${supplier.name}</td>
 			<td>${supplier.address}</td>
-			<td>${supplier.description}</td>
+			
 			<td><a href="<c:url value='supplierlist/edit/${supplier.id}' />">
 			<button class="">&#9998 Edit</button></a></td>
 			<td><a href="<c:url value='supplierlist/remove/${supplier.id}' />">

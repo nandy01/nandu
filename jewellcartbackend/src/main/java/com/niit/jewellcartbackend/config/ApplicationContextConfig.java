@@ -12,6 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.jewellcartbackend.dao.CategoryDAO;
@@ -20,16 +21,17 @@ import com.niit.jewellcartbackend.dao.ProductDAO;
 import com.niit.jewellcartbackend.dao.ProductDAOImpl;
 import com.niit.jewellcartbackend.dao.SupplierDAO;
 import com.niit.jewellcartbackend.dao.SupplierDAOImpl;
-import com.niit.jewellcartbackend.dao.UserDAO;
-import com.niit.jewellcartbackend.dao.UserDAOImpl;
+import com.niit.jewellcartbackend.dao.UserDetailsDAO;
+import com.niit.jewellcartbackend.dao.UserDetailsDAOImpl;
 import com.niit.jewellcartbackend.model.Category;
 import com.niit.jewellcartbackend.model.Product;
 import com.niit.jewellcartbackend.model.Supplier;
-import com.niit.jewellcartbackend.model.User;
+import com.niit.jewellcartbackend.model.UserDetails;
 
 @Configuration
 @ComponentScan("com.niit.jewellcartbackend.model")
 @EnableTransactionManagement
+@EnableWebSecurity
 public class ApplicationContextConfig {
 	
 	@Bean(name="datasource")
@@ -59,7 +61,7 @@ public class ApplicationContextConfig {
         	sessionBuilder.addAnnotatedClasses(Category.class);
         	sessionBuilder.addAnnotatedClasses(Supplier.class);
         	sessionBuilder.addAnnotatedClasses(Product.class);
-        	sessionBuilder.addAnnotatedClasses(User.class);
+        	sessionBuilder.addAnnotatedClasses(UserDetails.class);
         	System.out.println("go");
         	return sessionBuilder.buildSessionFactory();
     	
@@ -90,15 +92,17 @@ public class ApplicationContextConfig {
     public SupplierDAO getSupplierdao(SessionFactory sessionFactory) {
 		return new SupplierDAOImpl(sessionFactory);
 	}
+	
 	@Autowired
 	@Bean(name = "productDao")
     public ProductDAO getProductdao(SessionFactory sessionFactory) {
 		return new ProductDAOImpl(sessionFactory);
 	}
+	
 	@Autowired
 	@Bean(name = "userDao")
-    public UserDAO getUserdao(SessionFactory sessionFactory) {
-		return new UserDAOImpl(sessionFactory);
+    public UserDetailsDAO getUserdao(SessionFactory sessionFactory) {
+		return new UserDetailsDAOImpl(sessionFactory);
 	}
 }
 

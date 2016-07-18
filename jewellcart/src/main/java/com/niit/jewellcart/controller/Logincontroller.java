@@ -15,12 +15,12 @@ public class Logincontroller {
 	@Autowired
 	Userdao userdao;
 	@RequestMapping("/isvaliduser")
-	public ModelAndView showmessage(@RequestParam(value="name")String name,
+	public ModelAndView showmessage(@RequestParam(value="username")String username,
 			@RequestParam(value="password")String password){
 	System.out.println("is valid");
 	String message;
 	ModelAndView mv;
-	if (userdao.isvaliduser(name,password))
+	if (userdao.isvaliduser(username,password))
 	{
 		
 		message="valid credentials";
@@ -35,21 +35,23 @@ public class Logincontroller {
 	}
     
     mv.addObject("message",message);
-    mv.addObject("name",name);
+    mv.addObject("name",username);
     return mv;
 }
 	
 		@RequestMapping("/")
+		public String goToWelcome()
+		{
+			
+			return "Welcome";
+		}
+		@RequestMapping("/index")
 		public String goToindex()
 		{
 			
 			return "index";
 		}
-	@RequestMapping("/Welcome")
-	public String goToWelcome()
-	{
-		return "Welcome";
-		}
+	
 	@RequestMapping("/SignUp")
 	public String goToSignUp()
 	{
@@ -63,8 +65,39 @@ public class Logincontroller {
 	@RequestMapping("/adminHome")
 public String gotoadminHome()
 {
-		return "admin Home";
+		return "adminHome";
 }
+	@RequestMapping("/fileuploadform")
+	public String gotofileuploadform()
+	{
+			return "fileuploadform";
+	}
+	@RequestMapping("/productinfo")
+	public String gotoproductinfo()
+	{
+			return "productinfo";
+	}
+	@RequestMapping("/emailForm")
+	public String gotoemailForm()
+	{
+			return "emailForm";
+	}
+	@RequestMapping("/confirmDetails")
+	public String gotoconfirmDetails()
+	{
+			return "confirmDetails";
+	}
+	@RequestMapping("/exception")
+	public String gotoexception()
+	{
+			return "exception";
+	}
+	@RequestMapping("SignUp")
+	public String gotoSignUp(){
+		return "welcome";
+	}
+	
+
 	
 	}
 

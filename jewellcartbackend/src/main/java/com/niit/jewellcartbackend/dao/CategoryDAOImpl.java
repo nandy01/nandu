@@ -34,7 +34,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 		
 	}
 	@Transactional
-	public Category get(String id) {
+	public Category get(int id) {
 		String t="from Category where id=" + "'"+ id +"'";
 		Query query=sessionFactory.getCurrentSession().createQuery(t);
 		
@@ -48,6 +48,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 		
 		return null;
 	}
+	@Transactional
 	public void saveOrUpdate(Category category) {
 		
 		Session s=sessionFactory.openSession();
@@ -55,7 +56,7 @@ public class CategoryDAOImpl implements CategoryDAO{
 		s.flush();
 	}
 	@Transactional
-	public void delete(String id) {
+	public void delete(int id) {
 		System.out.println(id);
 	Category cat1=new Category();
 	cat1.setId(id);

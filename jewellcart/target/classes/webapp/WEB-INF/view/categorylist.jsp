@@ -51,7 +51,7 @@ function myFunction() {
 						<li role="presentation class="divider"></li>
 						<li><a href="Rings and Bangles">Rings and Bangles</a></li>
 						<li role="presentation class="divider"></li>
-						<li><a href="categorylist">Categoriesinfo</a></li>
+						<li><a href="adminHome">Categoriesinfo</a></li>
 					</ul></li>
 
 				<li><a href="Contact Us"><span
@@ -68,12 +68,12 @@ function myFunction() {
 	</nav>
 <a href ="categorylist">Categories</a> | <a href="productlist">Products</a> | <a href ="supplierlist">Suppliers</a>
 	
+	<center><h1><button type="button" class="btn btn-success">Categories Information</button></h1></center>
 	
-	<h1>Add a Category</h1>
 
 	<c:url var="addAction" value="/categorylist/add"></c:url>
 
-	<form:form action="${addAction}" commandName="category">
+	<center><form:form action="${addAction}" commandName="category">
 		<table>
 			<tr>
 				<td><form:label path="id">
@@ -111,15 +111,14 @@ function myFunction() {
 					</c:if></td>
 			</tr>
 		</table>
-	</form:form>
+	</form:form></center>
 	<br>
 
 	
-	<p>GET ALL CATEGORIES</p>
+	 <p>GET ALL CATEGORIES</p>
 
-<div class="row">
+ <div class="row">
 			<div class="col-md-6">
-
 
 				<table class="table table-bordered">
 					<thead>
@@ -149,11 +148,12 @@ function myFunction() {
 					</tbody>
 					
 				</table>
+				</div>
+				</div>
 
 	
 	
-	</div>
-	</div>
+	
 	
 </body>
 </html>

@@ -32,7 +32,7 @@ public class Catcontroller {
 		}
 
 		@RequestMapping("categorylist/remove/{id}")
-		   public String removeCategory(@PathVariable("id") String id,ModelMap model) throws Exception{
+		   public String removeCategory(@PathVariable("id") int id,ModelMap model) throws Exception{
 			
 		   try {
 			categoryDAO1.delete(id);
@@ -46,7 +46,7 @@ public class Catcontroller {
 		}
 
 		@RequestMapping("categorylist/edit/{id}")
-		public String editCategory(@PathVariable("id") String id, Model model){
+		public String editCategory(@PathVariable("id") int id, Model model){
 			System.out.println("editCategory");
 		    model.addAttribute("category", this.categoryDAO1.get(id));
 		    model.addAttribute("listCategorys", this.categoryDAO1.list());

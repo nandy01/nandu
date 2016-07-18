@@ -31,47 +31,11 @@ function myFunction() {
 }
 </script>
 <body>
-<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="Welcome">Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="Earrings">Earrings</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="Necklaces">Neckalace</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="Rings and Bangles">Rings and Bangles</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="categorylist">Categoriesinfo</a></li>
-					</ul></li>
-
-				<li><a href="Contact Us"><span
-						class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="SignUp"><span class="glyphicon glyphicon-user"></span>
-						SignUp</a></li>
-				<li><a href="index"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
-		</div>
-	</div>
-	</nav>
+<jsp:include page="header.jsp" /> 
 <a href ="categorylist">Categories</a> | <a href="productlist">Products</a> | <a href ="supplierlist">Suppliers</a>
 	
 	
-	<center><h1><button type="button" class="btn btn-success">Add a Product</button></h1></center>
+	<center><h1><button type="button" class="btn btn-success">Products Information</button></h1></center>
 
 	<c:url var="addAction" value="/productlist/add"></c:url>
 
@@ -98,6 +62,19 @@ function myFunction() {
 					</form:label></td>
 				<td><form:input path="name" required="true" /></td>
 			</tr>
+			<tr>
+			<td><form:label path="description">
+						<spring:message text="Description" />
+					</form:label></td>
+				<td><form:input path="description" required="true" /></td>
+			</tr>
+			
+			<tr>
+				<td><form:label path="price">
+						<spring:message text="Price" />
+					</form:label></td>
+				<td><form:input path="price" required="true" /></td>
+			</tr>
 			
 			<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">
@@ -108,6 +85,9 @@ function myFunction() {
 					</c:if></td>
 			</tr>
 		</table>
+		<h2>
+					<a href="fileuploadform">Upload</a>
+				</h2>
 	</form:form>
 	<br>
 
@@ -124,6 +104,8 @@ function myFunction() {
 						    <th>SI NO</th>
 							<th>ID</th>
 							<th>Name</th>
+							<th>Description</th>
+							<th>Price</th>
 				            <th>Edit</th>
 		                    <th>Delete</th>	
 						</tr>
@@ -135,6 +117,8 @@ function myFunction() {
 			<td>${status.count}</td>
 			<td>${product.id}</td>
 			<td>${product.name}</td>
+			<td>${product.description}</td>
+			<td>${product.price}</td>
 		
 			<td><a href="<c:url value='productlist/edit/${product.id}' />">
 			<button class="">&#9998 Edit</button></a></td>

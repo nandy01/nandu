@@ -20,18 +20,18 @@ public class SupplierTest {
 		SupplierDAO supplierDAO = (SupplierDAO) context.getBean("supplierDao");
 		Supplier sup=new Supplier();
 
-		sup.setId("CAT3");
+		//sup.setId("CAT3");
 		sup.setName("DiamondBangle");
 		
 		supplierDAO.saveOrUpdate(sup);
 		
 		
-		supplierDAO.delete("a");
+		//supplierDAO.delete("a");
 		
 		List<Supplier> li = new ArrayList<Supplier>();
 		li = supplierDAO.list();
 		for (Supplier s : li) {
-			System.out.println(s.getId() + ":" + s.getName()+":"+s.getAddress()+":"+s.getAddress());
+			System.out.println(s.getId() + ":" + s.getName()+":"+s.getAddress());
 
 
 }

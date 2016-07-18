@@ -37,7 +37,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("productlist/remove/{id}")
-	   public String removeProduct(@PathVariable("id") String id,ModelMap model) throws Exception{
+	   public String removeProduct(@PathVariable("id") int id,ModelMap model) throws Exception{
 		
 	   try {
 		productDAO1.delete(id);
@@ -51,7 +51,7 @@ public class ProductController {
 	}
 
 	@RequestMapping("productlist/edit/{id}")
-	public String editProduct(@PathVariable("id") String id, Model model){
+	public String editProduct(@PathVariable("id") int id, Model model){
 		System.out.println("editproduct");
 	    model.addAttribute("product", this.productDAO1.get(id));
 	    model.addAttribute("listproducts", this.productDAO1.list());

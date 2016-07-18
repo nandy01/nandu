@@ -18,18 +18,20 @@ public class ProductTest {
 		ProductDAO productDAO = (ProductDAO) context.getBean("productDao");
 		Product pro=new Product();
 
-		pro.setId("Pro3");
+		//pro.setId("Pro3");
 		pro.setName("DiamondBangle");
+		pro.setDescription("This is Bangle");
+		
 		
 		productDAO.saveOrUpdate(pro);
 		
 		
-		productDAO.delete("pro1");
+		//productDAO.delete("pro1");
 		
 		List<Product> li = new ArrayList<Product>();
 		li = productDAO.list();
 		for (Product p : li) {
-			System.out.println(p.getId() + ":" + p.getName());
+			System.out.println(p.getId() + ":" + p.getName()+":"+p.getDescription()+":"+p.getPrice());
 
 
 }

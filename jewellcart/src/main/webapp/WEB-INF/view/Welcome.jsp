@@ -14,7 +14,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 <style>
@@ -62,13 +62,15 @@ t1 {
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="Earrings">Earrings</a></li>
+						<li><a href="Earring">Earrings</a></li>
 						<li role="presentation class="divider"></li>
-						<li><a href="Necklaces">Neckalace</a></li>
+						<li><a href="productinfo">Bangles</a></li>
 						<li role="presentation class="divider"></li>
-						<li><a href="Rings and Bangles">Rings and Bangles</a></li>
+						<li><a href="Rings and Bangles">Rings</a></li>
 						<li role="presentation class="divider"></li>
-						<li><a href="categorylist">Categoriesinfo</a></li>
+						<li><a href="adminHome">Categoriesinfo</a></li>
+						<li role="presentation class="divider"></li>
+						<li><a href="fileuploadform">upload</a></li>
 					</ul></li>
 
 				<li><a href="Contact Us"><span
@@ -77,7 +79,7 @@ t1 {
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="SignUp"><span class="glyphicon glyphicon-user"></span>
 						SignUp</a></li>
-				<li><a href="index"><span
+				<li><a href="login"><span
 						class="glyphicon glyphicon-log-in"></span> Login</a></li>
 			</ul>
 		</div>
@@ -143,14 +145,7 @@ t1 {
 						</div>
 					</div>
 
-					<div class="item">
-						<right> <img src=<c:url value="/resource/image/vv.gif"/>
-							alt="" width="400" height="300"></right>
-						<div class="carousel-caption">
-							<h3>Necklace</h3>
-							<p>For Princess</p>
-						</div>
-					</div>
+					
 				</div>
 
 				<!-- Left and right controls -->

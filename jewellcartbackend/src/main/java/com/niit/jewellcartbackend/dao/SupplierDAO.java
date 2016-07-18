@@ -7,11 +7,11 @@ import com.niit.jewellcartbackend.model.Supplier;
 public interface SupplierDAO {
 	public List<Supplier> list();
 
-	public Supplier get(String id);
+	public Supplier get(int id);
 
 	public void saveOrUpdate(Supplier supplier);
 
-	public void delete(String id);
+	public void delete(int id);
 
 
 }

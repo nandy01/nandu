@@ -41,7 +41,7 @@ public class ProductDAOImpl implements ProductDAO {
 		
 
 	@Transactional
-		public Product get(String id) {
+		public Product get(int id) {
 		
 			String t="from Product where id=" + "'"+ id +"'";
 			Query query=sessionFactory.getCurrentSession().createQuery(t);
@@ -70,7 +70,7 @@ public class ProductDAOImpl implements ProductDAO {
 		
 
 	@Transactional
-		public void delete(String id) {
+		public void delete(int id) {
 			Product pro1 = new Product();
 			pro1.setId(id);
 			sessionFactory.getCurrentSession().delete(pro1);
