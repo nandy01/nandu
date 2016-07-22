@@ -21,7 +21,9 @@ public class ProductTest {
 		//pro.setId("Pro3");
 		pro.setName("DiamondBangle");
 		pro.setDescription("This is Bangle");
-		
+		pro.setCategory_id(2);
+		pro.setPrice(150);
+		pro.setSupplier_id(2);
 		
 		productDAO.saveOrUpdate(pro);
 		

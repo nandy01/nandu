@@ -2,8 +2,12 @@ package com.niit.jewellcartbackend.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.springframework.stereotype.Component;
 
@@ -12,14 +16,34 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserDetails {
 	@Id
-	@Column(name="username")
+	@Column(name="id")
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	 @NotNull
+	 @Size(min = 6, max = 15)
+	private int id;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	
+
 	private String username;
-    
+	@NotNull(message = "Please enter your email addresss.")
+    @Size(min = 6, max = 15, message = "please enter your email")
     private String email;
+    @NotNull(message = "Please enter your password.")
+    @Size(min = 6, max = 15)
 	private String password;
+    @NotNull(message = "Please enter your mobile.")
+    @Size( max = 10)
 	private String mobile;
+    @NotNull(message = "Please enter your addresss.")
 	private String address;
-	private String gender;
+    
+    private boolean isAdmin;
+
 	public String getEmail() {
 		return email;
 	}
@@ -33,19 +57,8 @@ public class UserDetails {
 		this.username = username;
 	}
 	
-	public String getGender() {
-		return gender;
-	}
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
-	public String getDob() {
-		return dob;
-	}
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
-	private String dob;
+	
+	
 	
 	
 	
@@ -69,6 +82,13 @@ public class UserDetails {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
+	public boolean isAdmin() {
+		return isAdmin;
+	}
+	public void setAdmin(boolean isAdmin) {
+		this.isAdmin = isAdmin;
+	}
+	
 
 	
 }

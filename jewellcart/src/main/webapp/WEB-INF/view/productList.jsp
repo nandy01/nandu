@@ -39,24 +39,9 @@ function myFunction() {
 
 	<c:url var="addAction" value="/productlist/add"></c:url>
 
-	<form:form action="${addAction}" commandName="product">
+	<form:form action="${addAction}" commandName="product" method="POST">
 		<table>
-			<tr>
-				<td><form:label path="id">
-						<spring:message text="ID" />
-					</form:label></td>
-				<c:choose>
-					<c:when test="${!empty product.id}">
-						<td><form:input path="id" disabled="true" readonly="true" />
-						</td>
-					</c:when>
-
-					<c:otherwise>
-						<td><form:input path="id" patttern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
-					</c:otherwise>
-				</c:choose>
-			<tr>
-			<form:input path="id" hidden="true"  />
+			
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
@@ -75,6 +60,20 @@ function myFunction() {
 					</form:label></td>
 				<td><form:input path="price" required="true" /></td>
 			</tr>
+			<tr>
+				<td><form:label path="supplier">
+						<spring:message text="Supplier" />
+					</form:label></td>
+				<%-- <td><form:input path="supplier.name" required="true" /></td> --%>
+				 <td><form:select path="supplier.name" items="${supplierList}" itemValue="name" itemLabel="name" /></td>
+			</tr>
+			<tr>
+				<td><form:label path="category">
+						<spring:message text="Category" />
+					</form:label></td>
+				<%-- <td><form:input path="category.name" required="true" /></td> --%>
+				<td><form:select path="category.name" items="${categoryList}" itemValue="name" itemLabel="name" /></td>
+			</tr>
 			
 			<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">
@@ -85,9 +84,9 @@ function myFunction() {
 					</c:if></td>
 			</tr>
 		</table>
-		<h2>
-					<a href="fileuploadform">Upload</a>
-				</h2>
+		
+					<a href="Upload">Upload</a>
+				
 	</form:form>
 	<br>
 
@@ -106,6 +105,8 @@ function myFunction() {
 							<th>Name</th>
 							<th>Description</th>
 							<th>Price</th>
+							<th>Category ID</th>
+							<th>Supplier ID</th>
 				            <th>Edit</th>
 		                    <th>Delete</th>	
 						</tr>
@@ -119,6 +120,8 @@ function myFunction() {
 			<td>${product.name}</td>
 			<td>${product.description}</td>
 			<td>${product.price}</td>
+			<td>${product.category.name}</td>
+					<td>${product.supplier.name}</td>
 		
 			<td><a href="<c:url value='productlist/edit/${product.id}' />">
 			<button class="">&#9998 Edit</button></a></td>

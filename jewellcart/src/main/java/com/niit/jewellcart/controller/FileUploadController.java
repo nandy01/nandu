@@ -1,5 +1,4 @@
 package com.niit.jewellcart.controller;
-
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
@@ -33,7 +32,7 @@ try {
 	byte[] bytes = file.getBytes();
 
 	// Creating the directory to store file
-	File files=new File("C:\\Users\\LENOVO\\Desktop\\NehaProject\\ShopingCartFrontEnd\\src\\main\\webapp\\WEB-INF\\resource\\image");
+	File files=new File("C:\\Users\\NANDHINI SELVARAJAN\\Desktop\\jewellcart\\src\\main\\webapp\\WEB-INF\\resource\\image");
 	
 
 	// Create the file on server
@@ -45,7 +44,7 @@ try {
 	stream.close();
 
 	logger.info("Server File Location="
-			+"C:\\Users\\LENOVO\\Desktop\\NehaProject\\ShopingCartFrontEnd\\src\\main\\webapp\\WEB-INF\\resource\\image\\filename.exe");
+			+"C:\\Users\\NANDHINI SELVARAJAN\\Desktop\\jewellcart\\src\\main\\webapp\\WEB-INF\\resource\\image");
 
 	return "You successfully uploaded file=" +serverFile.getAbsolutePath();
 } catch (Exception e) {
@@ -56,6 +55,5 @@ return "You failed to upload " + name
 		+ " because the file was empty.";
 }
 }
-
 
 }

@@ -74,6 +74,27 @@ public class UserDetailsDAOImpl implements UserDetailsDAO{
 	
 	}
 
+	public boolean isValid(String id, String name, boolean isAdmin) {
+		String hql = "from User where id= '" + id + "' and " + " password ='" + password+"'";
+		Query query = (Query) sessionFactory.getCurrentSession().createQuery(hql);
+		
+		@SuppressWarnings("unchecked")
+		List<User> list = (List<User>) ((Criteria) query).list();
+		
+		if (list != null && !list.isEmpty()) {
+			return true;
+		}
+		
+		return false;
+	}
+
+	public boolean isValid(String id, String name) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+
+		
+
 	
 
 

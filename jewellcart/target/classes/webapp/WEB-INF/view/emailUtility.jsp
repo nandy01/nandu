@@ -42,7 +42,7 @@ props.put("mail.smtp.socketFactory.fallback", "true");
     new javax.mail.Authenticator(){
         protected PasswordAuthentication getPasswordAuthentication() {
             return new PasswordAuthentication(
-            "cse920812104052@gmail.com", "nandhiniprabha1994");// Specify the Username and the PassWord
+            "nandhiniselvarajan157@gmail.com", "nandhiniprabha1994");// Specify the Username and the PassWord
         }
   });
  // Set debug on the Session

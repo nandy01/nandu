@@ -14,73 +14,9 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
-<style>
 
-   body{
- 
-
- 
- /* Safari 4-5, Chrome 1-9 */
-    background: -webkit-gradient(radial, center center, 0, center center, 460, from(#1a82f7), to(#2F2727));
-
- 
- 
-}
-
-.centered-form{
-	margin-top: 60px;
-}
-
-.centered-form .panel{
-	background: rgba(255, 255, 255, 0.8);
-	box-shadow: rgba(0, 0, 0, 0.3) 20px 20px 20px;
-}
-label.label-floatlabel {
-    font-weight: bold;
-    color: #46b8da;
-    font-size: 11px;
-}
-
-
-
-</style>
-<body>
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-     
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="Welcome">Home</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="Earrings">Earrings</a></li>
-            <li role="presentation class="divider"></li>
-            <li><a href="Necklaces">Neckalace</a></li>
-            <li role="presentation class="divider"></li>
-            <li><a href="Rings and Bangles">Rings and Bangles</a></li>
-            <li role="presentation class="divider"></li>
-            <li><a href="adminHome">Categoriesinfo</a></li>
-          </ul>
-        </li>
-        
-        <li><a href="Contact Us"><span
-				class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="SignUp"><span class="glyphicon glyphicon-user"></span> SignUp</a></li>
-        <li><a href="index"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<body  background=<c:url value="resource/image/dia_carat.jpg"/>>
+<jsp:include page="header.jsp" />
 <div class="container">
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">

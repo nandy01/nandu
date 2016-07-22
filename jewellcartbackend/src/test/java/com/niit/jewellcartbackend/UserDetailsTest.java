@@ -25,9 +25,9 @@ public class UserDetailsTest {
 		use.setMobile("9445821039");
 		use.setEmail("nan@nan");
 	    use.setPassword("abc");
-	    use.setAddress("abc");
-	    use.setGender("female");
-	    use.setDob("1/11/1994");
+	   
+	    
+	   
 	    
 		
 		
@@ -39,8 +39,8 @@ public class UserDetailsTest {
 		List<UserDetails> list = new ArrayList<UserDetails>();
 		list = userDAO.list();
 		for (UserDetails s : list) {
-			System.out.println(s.getUsername()+":"+s.getMobile()+":"+ s.getPassword()+":"+s.getAddress()+":"+s.getDob()
-			+":"+s.getEmail()+":"+s.getGender());
+			System.out.println(s.getUsername()+":"+s.getMobile()+":"+ s.getPassword()+":"+s.getAddress()
+			+":"+s.getEmail()+s.getId());
 
 
 }

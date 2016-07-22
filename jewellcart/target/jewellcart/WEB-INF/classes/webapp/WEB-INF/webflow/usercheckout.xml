@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.springframework.org/schema/webflow
+  http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd">
+ 
+ 
+
+ 
+ 
+        
+ 
+ 
+        <view-state id="cartDisplay" view="Address.jsp">
+		<transition on="gotoConfirmation" to="shippingAddDisplay"/>
+		</view-state>
+		
+	    <view-state id="shippingAddDisplay" view="Confirmation.jsp">
+	    <transition on="gotoConfirm" to="confirmation"/>
+	   <transition on="backTouserInfoProcess" to="userInfoDisplay"/>
+	   </view-state>
+	   
+	   <view-state id="Confirmation">
+	   <transition on="validateOrderprocesscompleted" to="cartDetails"/>
+	   <transition on="backToShippingAddProcess" to="shippingAddDisplay"/>
+	   </view-state>
+	
+	   <view-state id="confirmation" view="confiramtion.jsp">
+	   <transition to="endstate"/>
+	   </view-state>
+	   <end-state id="endstate"/>
+	   
+	  <view-state id="invalidProcess">
+	  <transition to="endstate"/>
+	  </view-state>
+	   
+	   <end-state id="cancelOrderProcess" view="orderProcessCancelled.jsp"/>
+	</flow>

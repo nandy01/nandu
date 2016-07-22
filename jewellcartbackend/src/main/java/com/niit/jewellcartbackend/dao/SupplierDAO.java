@@ -13,7 +13,7 @@ public interface SupplierDAO {
 
 	public void delete(int id);
 
-
+	public Supplier getByName(String name);
 }
 
 

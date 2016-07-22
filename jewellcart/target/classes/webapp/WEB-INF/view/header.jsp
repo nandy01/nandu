@@ -21,8 +21,7 @@
 		<div class="navbar-header">
 			<button type="button" class="navbar-toggle" data-toggle="collapse"
 				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
+				<span class="icon-bar"></span> 
 			</button>
 
 		</div>
@@ -32,15 +31,14 @@
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
 					<ul class="dropdown-menu">
-						<li><a href="Earrings">Earrings</a></li>
+						<li><a href="Earring">Earrings</a></li>
 						<li role="presentation class="divider"></li>
-						<li><a href="Bangles"></a>Bangles</li>
+						<li><a href="bangle">Bangles</a></li>
 						<li role="presentation class="divider"></li>
-						<li><a href="Rings and Bangles">Rings</a></li>
+						<li><a href="Ring">Rings</a></li>
 						<li role="presentation class="divider"></li>
 						<li><a href="adminHome">Categoriesinfo</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="fileuploadform">upload</a></li>
+						
 					</ul></li>
 
 				<li><a href="Contact Us"><span

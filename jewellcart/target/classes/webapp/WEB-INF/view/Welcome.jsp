@@ -46,50 +46,8 @@ t1 {
 </head>
 
 <body>
-	<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse"
-				data-target="#myNavbar">
-				<span class="icon-bar"></span> <span class="icon-bar"></span> <span
-					class="icon-bar"></span>
-			</button>
-
-		</div>
-		<div class="collapse navbar-collapse" id="myNavbar">
-			<ul class="nav navbar-nav">
-				<li class="active"><a href="Welcome">Home</a></li>
-				<li class="dropdown"><a class="dropdown-toggle"
-					data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li><a href="Earring">Earrings</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="productinfo">Bangles</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="Rings and Bangles">Rings</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="adminHome">Categoriesinfo</a></li>
-						<li role="presentation class="divider"></li>
-						<li><a href="fileuploadform">upload</a></li>
-					</ul></li>
-
-				<li><a href="Contact Us"><span
-						class="glyphicon glyphicon-map-marker">Contact Us</span></a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li><a href="SignUp"><span class="glyphicon glyphicon-user"></span>
-						SignUp</a></li>
-				<li><a href="login"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
-		</div>
-	</div>
-	</nav>
-	<center>
-		<form>
-			<input type="text" name="search" placeholder="Search..">
-		</form>
-	</center>
+	
+	<jsp:include page="header.jsp" /> 
 
 
 	<div class="jumbotron" style="color: #FF00FF">
@@ -116,8 +74,7 @@ t1 {
 				<!-- Wrapper for slides -->
 				<div class="carousel-inner" role="listbox">
 					<div class="item active">
-						<left> <img
-							src=<c:url value="/resource/image/bangle19.jpg"/> alt=""
+						<left> <img src=<c:url value="/resource/image/bangle19.jpg"/> alt=""
 							width="400" height="300"></left>
 						<div class="carousel-caption">
 							<h3>Gorgeous</h3>
@@ -175,7 +132,7 @@ t1 {
 			</div>
 			<div class="col-sm-4">
 				<strong>FASHION WORLD</strong>
-			<a href=Contact Us><p>Contact Us</p></a>
+			<a href=ContactUs><p>Contact Us</p></a>
 				<hr>
 				<a href="aboutus"><p>About US</p></a><hr>
 				<a href="giftcard"><p>GiftCard<p></a>
@@ -296,7 +253,7 @@ t1 {
 			</p>
 	</div>
 	<hr>
-	<center><p>&copy; 2016 WomenContrivingZone.com</p></center>
+	<jsp:include page="footer.jsp" /> 
 	
 </body>
 </html>

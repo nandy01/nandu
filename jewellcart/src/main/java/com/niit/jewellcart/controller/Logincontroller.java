@@ -1,43 +1,66 @@
 package com.niit.jewellcart.controller;
 
+import java.util.Map;
+
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.niit.jewellcart.dao.Userdao;
+
+import com.niit.jewellcartbackend.model.UserDetails;
+import com.niit.jewellcartbackend.validation.userValidation;
 
 
 
 @Controller
 public class Logincontroller {
 	@Autowired
-	Userdao userdao;
-	@RequestMapping("/isvaliduser")
-	public ModelAndView showmessage(@RequestParam(value="username")String username,
-			@RequestParam(value="password")String password){
-	System.out.println("is valid");
-	String message;
-	ModelAndView mv;
-	if (userdao.isvaliduser(username,password))
-	{
-		
-		message="valid credentials";
-		mv=new ModelAndView("Welcome");
-		
-	}
-	else
-	{
-		message="invalid credentials";
-		mv=new ModelAndView("index");
-		
-	}
-    
-    mv.addObject("message",message);
-    mv.addObject("name",username);
-    return mv;
-}
+	private userValidation Uservalid;
+	private static final Logger logger = LoggerFactory
+			.getLogger(UserDetails.class);
+	    @RequestMapping(value = "/login", method = RequestMethod.GET)
+	    public String viewLogin(Map<String, Object> model) {
+	        UserDetails user = new UserDetails();
+	        model.put("userForm", user);
+	        return "login";
+	    }
+	    @RequestMapping(value = "loginto", method = RequestMethod.POST)
+		public String save(
+				@Valid  @ModelAttribute("userForm") UserDetails userdetails,
+				BindingResult result, Model model) {
+	    	Uservalid.validate(userdetails,result);
+			if (result.hasErrors()) {
+				logger.info("Returning login.jsp page");
+				return "login";
+			}
+			else{
+				return "Welcome";
+				
+			}
+			
+			
+			
+			 }
+			
+	
+	    
+	
+	    @RequestMapping("/Ring")
+		public String goToring()
+		{
+			
+			return "Ring";
+		}
 	
 		@RequestMapping("/")
 		public String goToWelcome()
@@ -45,33 +68,55 @@ public class Logincontroller {
 			
 			return "Welcome";
 		}
-		@RequestMapping("/index")
-		public String goToindex()
+		@RequestMapping("/Welcome")
+		public String goToWelcome1()
 		{
 			
-			return "index";
+			return "Welcome";
 		}
+		@RequestMapping("/bangle")
+		public String goTobangle()
+		{
+			
+			return "bangle";
+		}
+		@RequestMapping("/cart")
+		public String goTocart()
+		{
+			
+			return "cart";
+		}
+		@RequestMapping("/Earring")
+		public String goToEarring()
+		{
+			
+			return "Earring";
+		}
+		@RequestMapping("/login")
+		public String goTologin()
+		{
+			
+			return "login";
+		}
+		
 	
 	@RequestMapping("/SignUp")
 	public String goToSignUp()
 	{
-		return "SignUp";
+		return "Welcome";
 		}
 	@RequestMapping("/Contact Us")
 	public String goToContactUs()
 	{
 		return "Contact Us";
 		}
+	
 	@RequestMapping("/adminHome")
 public String gotoadminHome()
 {
 		return "adminHome";
 }
-	@RequestMapping("/fileuploadform")
-	public String gotofileuploadform()
-	{
-			return "fileuploadform";
-	}
+	
 	@RequestMapping("/productinfo")
 	public String gotoproductinfo()
 	{
@@ -92,12 +137,28 @@ public String gotoadminHome()
 	{
 			return "exception";
 	}
-	@RequestMapping("SignUp")
-	public String gotoSignUp(){
-		return "welcome";
+	@RequestMapping("/paymentform")
+	public String gotopaymentform()
+	{
+		return "paymentform";
 	}
+	@RequestMapping("/emailUtility")
+	public String gotoemailUtility()
+	{
+			return "emailUtility";
+	}
+	public class cartController {
+		@RequestMapping("/cartDisplay")
+		public String checkout()
+		{
+			
+			return "redirect:/cartDisplay?cartDisplay";
+		}
+		
+		
 	
 
 	
 	}
 
+}

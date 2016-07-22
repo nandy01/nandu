@@ -76,5 +76,6 @@ public class ProductDAOImpl implements ProductDAO {
 			sessionFactory.getCurrentSession().delete(pro1);
 			
 		}
+	
 
 }

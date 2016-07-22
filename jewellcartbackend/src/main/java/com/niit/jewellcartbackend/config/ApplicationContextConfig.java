@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.orm.hibernate4.HibernateTransactionManager;
 import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+//import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import com.niit.jewellcartbackend.dao.CategoryDAO;
@@ -31,7 +31,7 @@ import com.niit.jewellcartbackend.model.UserDetails;
 @Configuration
 @ComponentScan("com.niit.jewellcartbackend.model")
 @EnableTransactionManagement
-@EnableWebSecurity
+//@EnableWebSecurity
 public class ApplicationContextConfig {
 	
 	@Bean(name="datasource")
@@ -62,6 +62,7 @@ public class ApplicationContextConfig {
         	sessionBuilder.addAnnotatedClasses(Supplier.class);
         	sessionBuilder.addAnnotatedClasses(Product.class);
         	sessionBuilder.addAnnotatedClasses(UserDetails.class);
+        	
         	System.out.println("go");
         	return sessionBuilder.buildSessionFactory();
     	
@@ -104,5 +105,7 @@ public class ApplicationContextConfig {
     public UserDetailsDAO getUserdao(SessionFactory sessionFactory) {
 		return new UserDetailsDAOImpl(sessionFactory);
 	}
+	
+		
 }
 

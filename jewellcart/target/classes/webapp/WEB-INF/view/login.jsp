@@ -2,6 +2,7 @@
     pageEncoding="ISO-8859-1"%>
    <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
    <%@ page isELIgnored="false" %>
+   <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -15,45 +16,40 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-<style>
-	body
-	{
-	background-repeat:no-repeat
-	}</style>
+
 <title>login</title>
+<style>
+  .error {
+        color: red; font-weight: bold;
+    }
+    </style>
 </head>
-<body background=<c:url value="resource/image/bangle.jpg"/>>
+
+<body background=<c:url value="resource/image/dia_carat.jpg"/>>
+<jsp:include page="header.jsp" /> 
+<form:form action="loginto" commandName="userForm">
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
             <div class="panel panel-default">
                 <div class="panel-heading"> <strong class="">Login</strong>
-               
-
                 </div>
                 
-                
-  
-  
-
-
-
-
-  
-  
-                <div class="panel-body">
-                    <form class="form-horizontal" role="form" action="isvaliduser" method="POST">
+             <div class="panel-body">
+                    
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="Username">Username</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="username" placeholder="Username" required="">
+                                <input type="text" class="form-control" name="username" placeholder="Username" >
+                                <form:errors path="username" cssClass="error"/>
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label  class="col-sm-3 control-label" for="password">password</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" name="password" placeholder="password" required="">
+                                <input type="password" class="form-control" name="password" placeholder="password">
+                             <form:errors path="password" cssClass="error"/>
                             </div>
                         </div>
                         <div class="form-group">
@@ -72,7 +68,7 @@
                         </div>
                     </form>
                 </div>
-                <div class="panel-footer">Not Registered? <a href="SignUp.jsp" class="">Register here</a>
+                <div class="panel-footer">Not Registered? <a href="SignUp" class="">Register here</a>
                 </div>
                 </div>
                
@@ -82,7 +78,7 @@
   
   </div>
   
-  
+  </form:form>
   
   </body>
   </html>             

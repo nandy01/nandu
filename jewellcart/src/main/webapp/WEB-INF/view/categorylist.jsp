@@ -75,22 +75,7 @@ function myFunction() {
 
 	<center><form:form action="${addAction}" commandName="category">
 		<table>
-			<tr>
-				<td><form:label path="id">
-						<spring:message text="ID" />
-					</form:label></td>
-				<c:choose>
-					<c:when test="${!empty category.id}">
-						<td><form:input path="id" disabled="true" readonly="true" />
-						</td>
-					</c:when>
-
-					<c:otherwise>
-						<td><form:input path="id" patttern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
-					</c:otherwise>
-				</c:choose>
-			<tr>
-			<form:input path="id" hidden="true"  />
+			
 				<td><form:label path="name">
 						<spring:message text="Name" />
 					</form:label></td>
@@ -113,6 +98,9 @@ function myFunction() {
 		</table>
 	</form:form></center>
 	<br>
+	
+
+
 
 	
 	 <p>GET ALL CATEGORIES</p>

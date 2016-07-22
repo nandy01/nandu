@@ -22,13 +22,13 @@ public class AppTest {
 		CategoryDAO categoryDAO = (CategoryDAO) context.getBean("CategoryDao");
 		Category ca=new Category();
 
-		//ca.setId(3);
+		
  ca.setName("DiamondBangle");
 ca.setDescription("Bangle product");
 categoryDAO.saveOrUpdate(ca);
 		
 		
-		//categoryDAO.delete(1);
+		
 
 		System.out.println("helo");
 

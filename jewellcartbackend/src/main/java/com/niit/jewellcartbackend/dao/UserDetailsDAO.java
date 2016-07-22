@@ -13,17 +13,11 @@ public interface UserDetailsDAO {
 
 	public void saveOrUpdate(User user);
 
-	
-	
-
-
-
-	
 	public void saveOrUpdate(UserDetails userDetails);
 
 	
-	
-	public boolean isValidUser(String name);
+
+	public boolean isValid(String id, String name,boolean isAdmin);
 
 
 
