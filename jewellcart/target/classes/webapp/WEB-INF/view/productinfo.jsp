@@ -11,14 +11,40 @@
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script
-	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <%@ page isELIgnored="false"%>
 <title>prodinfo</title>
 <head>
 </head>
 <body>
-${hello}
+<jsp:include page="header.jsp" /> 
 
+<script>
+var val=${product};
+	var app = angular.module("myApp", []);
+	app.controller("myCtrl", function($scope) {
+		$scope.list = val;
+		
+	});
+</script>
+<table>
+<tr><td width="250px">
+<div ng-app="myApp" ng-controller="myCtrl">
+	<img src="${img}" height="200px" width="200px">
+	<h1>{{list.name}}</h1>   
+	    <h4>&#8377;{{list.price}}/-</h4>
+		<h2>Product Details</h2>
+		{{list.description}}
+</div>  
+ <br>
+		<a href="cartDisplay?cartDisplay"><button type="button" class="btn btn-success">add to cart</button></a>
+		
+			 
+ </td></tr> </table>   
+<br>
+<br>
+ <%@ include file="footer.jsp" %>
 			
 </body>
 </html>

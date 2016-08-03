@@ -7,9 +7,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Spring Mvc WebFlow Demo</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+ <%@ page isELIgnored="false"%>
 </head>
 
 <body>
+
 	<div class="content">
 		<fieldset>
 			<legend>Confirm Details</legend>
@@ -19,21 +28,21 @@
 			
 			<sf:form modelAttribute="userDetails">
 				
-				<sf:label path="name"> HouseNo:</sf:label>${userDetails.houseno}
+				<sf:label path="name"> HouseNo:</sf:label>
 					<br />
 				<br />
-				<sf:label path="email">Address1:</sf:label>${userDetails.address1}
+				<sf:label path="email">Address1:</sf:label>
 					<br />
 				<br />
-				<sf:label path="password">Address2 :</sf:label>${userDetails.address2}
+				<sf:label path="password">Address2 :</sf:label>
 					<br />
 <br/>
 
 				
-				<sf:label path="mobile">state:</sf:label>${userDetails.state}
+				<sf:label path="mobile">state:</sf:label>
 					<br />
 				<br />
-				<sf:label path="address">City :</sf:label>${userDetails.city}
+				<sf:label path="address">City :</sf:label>
 					<br />
 			
 			

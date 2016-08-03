@@ -1,6 +1,5 @@
 com\niit\jewellcartbackend\model\UserDetails.class
 com\niit\jewellcartbackend\App.class
-com\niit\jewellcartbackend\model\User.class
 com\niit\jewellcartbackend\dao\CategoryDAO.class
 com\niit\jewellcartbackend\dao\UserDetailsDAOImpl.class
 com\niit\jewellcartbackend\dao\CategoryDAOImpl.class

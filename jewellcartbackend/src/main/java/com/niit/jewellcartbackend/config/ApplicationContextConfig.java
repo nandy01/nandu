@@ -15,6 +15,8 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
 //import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.jewellcartbackend.dao.CartDAO;
+import com.niit.jewellcartbackend.dao.CartDAOImpl;
 import com.niit.jewellcartbackend.dao.CategoryDAO;
 import com.niit.jewellcartbackend.dao.CategoryDAOImpl;
 import com.niit.jewellcartbackend.dao.ProductDAO;
@@ -23,6 +25,7 @@ import com.niit.jewellcartbackend.dao.SupplierDAO;
 import com.niit.jewellcartbackend.dao.SupplierDAOImpl;
 import com.niit.jewellcartbackend.dao.UserDetailsDAO;
 import com.niit.jewellcartbackend.dao.UserDetailsDAOImpl;
+import com.niit.jewellcartbackend.model.Cart;
 import com.niit.jewellcartbackend.model.Category;
 import com.niit.jewellcartbackend.model.Product;
 import com.niit.jewellcartbackend.model.Supplier;
@@ -62,6 +65,8 @@ public class ApplicationContextConfig {
         	sessionBuilder.addAnnotatedClasses(Supplier.class);
         	sessionBuilder.addAnnotatedClasses(Product.class);
         	sessionBuilder.addAnnotatedClasses(UserDetails.class);
+        	sessionBuilder.addAnnotatedClasses(Cart.class);
+        	
         	
         	System.out.println("go");
         	return sessionBuilder.buildSessionFactory();
@@ -105,7 +110,13 @@ public class ApplicationContextConfig {
     public UserDetailsDAO getUserdao(SessionFactory sessionFactory) {
 		return new UserDetailsDAOImpl(sessionFactory);
 	}
+	@Autowired
+	@Bean(name = "cartDao")
+    public CartDAO getCartdao(SessionFactory sessionFactory) {
+		return new CartDAOImpl(sessionFactory);
+	}
 	
+
 		
 }
 

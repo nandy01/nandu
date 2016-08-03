@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -16,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-
+import com.niit.jewellcartbackend.dao.UserDetailsDAO;
 import com.niit.jewellcartbackend.model.UserDetails;
 import com.niit.jewellcartbackend.validation.userValidation;
 
@@ -26,34 +27,63 @@ import com.niit.jewellcartbackend.validation.userValidation;
 public class Logincontroller {
 	@Autowired
 	private userValidation Uservalid;
+	@Autowired
+ private UserDetailsDAO userdao;
 	private static final Logger logger = LoggerFactory
 			.getLogger(UserDetails.class);
-	    @RequestMapping(value = "/login", method = RequestMethod.GET)
+	    @RequestMapping(value = "/SignUp", method = RequestMethod.GET)
 	    public String viewLogin(Map<String, Object> model) {
 	        UserDetails user = new UserDetails();
 	        model.put("userForm", user);
-	        return "login";
+	        return "SignUp";
 	    }
 	    @RequestMapping(value = "loginto", method = RequestMethod.POST)
 		public String save(
 				@Valid  @ModelAttribute("userForm") UserDetails userdetails,
 				BindingResult result, Model model) {
+	    	
 	    	Uservalid.validate(userdetails,result);
 			if (result.hasErrors()) {
-				logger.info("Returning login.jsp page");
-				return "login";
+				
+				logger.info("Returning SignUp page");
+				return "SignUP";
 			}
-			else{
+			userdao.saveOrUpdate(userdetails);
 				return "Welcome";
 				
 			}
 			
 			
 			
-			 }
-			
-	
+			 
 	    
+	   @RequestMapping("/login")
+	    public String goLogin()
+	    {
+	    	return "login";
+	    }
+	       
+	    @RequestMapping("/login1")
+		public String log(@RequestParam(value="error",required=false) String error,Authentication Auth){
+			
+			System.out.println("inside login");
+			System.out.println(Auth);
+			System.out.println(error);
+			
+			if(error!=null){
+				return "login";
+			}
+			
+			return "Welcome";
+			
+		}
+	    
+	   /* @RequestMapping("/SignUp")
+		public ModelAndView registerUser(@ModelAttribute UserDetails userdetails) {
+	    	System.out.println("signup");
+	    	userdao.saveOrUpdate(userdetails);
+		  return new ModelAndView("/Welcome");
+	    }*/
 	
 	    @RequestMapping("/Ring")
 		public String goToring()
@@ -74,37 +104,22 @@ public class Logincontroller {
 			
 			return "Welcome";
 		}
-		@RequestMapping("/bangle")
-		public String goTobangle()
+		@RequestMapping("/SendEmail")
+		public String goToSendEmail()
 		{
 			
-			return "bangle";
+			return "SendEmail";
 		}
-		@RequestMapping("/cart")
+				@RequestMapping("/cart")
 		public String goTocart()
 		{
 			
 			return "cart";
 		}
-		@RequestMapping("/Earring")
-		public String goToEarring()
-		{
-			
-			return "Earring";
-		}
-		@RequestMapping("/login")
-		public String goTologin()
-		{
-			
-			return "login";
-		}
+		
 		
 	
-	@RequestMapping("/SignUp")
-	public String goToSignUp()
-	{
-		return "Welcome";
-		}
+	
 	@RequestMapping("/Contact Us")
 	public String goToContactUs()
 	{
@@ -117,15 +132,11 @@ public String gotoadminHome()
 		return "adminHome";
 }
 	
-	@RequestMapping("/productinfo")
-	public String gotoproductinfo()
+	
+	@RequestMapping("/EmailForm")
+	public String gotoEmailForm()
 	{
-			return "productinfo";
-	}
-	@RequestMapping("/emailForm")
-	public String gotoemailForm()
-	{
-			return "emailForm";
+			return "EmailForm";
 	}
 	@RequestMapping("/confirmDetails")
 	public String gotoconfirmDetails()
@@ -147,6 +158,7 @@ public String gotoadminHome()
 	{
 			return "emailUtility";
 	}
+	
 	public class cartController {
 		@RequestMapping("/cartDisplay")
 		public String checkout()

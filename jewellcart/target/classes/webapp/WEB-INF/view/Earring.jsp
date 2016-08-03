@@ -26,7 +26,7 @@
 
 			<div class="col-md-4">
 				<center>
-				<a href="productinfo?id=w3"class="thumbnail"> <img
+				<a href="productinfo?id=c1"class="thumbnail"> <img
 						src="resource/image/c1.jpg" alt="ring"
 						style="width: 250px; height: 250px"></a>
 				

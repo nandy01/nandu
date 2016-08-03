@@ -7,29 +7,29 @@
 <title>Insert title here</title>
 </head>
 <body>
-  <form action="emailUtility" method="post">
-            <table border="0" width="35%" align="center">
-                <caption><h2>Send email using SMTP</h2></caption>
+   <center>
+        <h1>Sending e-mail</h1>
+        <form method="post" action="sendEmail">
+            <table border="0" width="80%">
                 <tr>
-                    <td width="50%">Sender address </td>
-                    <td><input type="text" name="from" size="50"/></td>
+                    <td>To:</td>
+                    <td><input type="text" name="recipient" size="65" /></td>
                 </tr>
                 <tr>
-                    <td width="50%">Recipient address </td>
-                    <td><input type="text" name="to" size="50"/></td>
+                    <td>Subject:</td>
+                    <td><input type="text" name="subject" size="65" /></td>
                 </tr>
                 <tr>
-                    <td>Subject </td>
-                    <td><input type="text" name="subject" size="50"/></td>
-                </tr>
+                    <td>Message:</td>
+                    <td><textarea cols="50" rows="10" name="message"></textarea></td>
+                </tr>               
                 <tr>
-                    <td>Message Text </td>
-                    <td><input type="text" name="messageText"></td>
-                </tr>
-                <tr>
-                    <td colspan="2" align="center"><input type="submit" value="Send"/></td>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="Send E-mail" />
+                    </td>
                 </tr>
             </table>
-            </form>
+        </form>
+    </center>
 </body>
 </html>

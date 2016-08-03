@@ -2,22 +2,23 @@ package com.niit.jewellcartbackend.dao;
 
 import java.util.List;
 
-import com.niit.jewellcartbackend.model.User;
+import org.h2.engine.User;
+
 import com.niit.jewellcartbackend.model.UserDetails;
 
 public interface UserDetailsDAO {
 	
 	public List<UserDetails> list();
-	public List<User>list1();
 	
+	
+	public User get(int id);
 
-	public void saveOrUpdate(User user);
 
 	public void saveOrUpdate(UserDetails userDetails);
 
-	
+	public void delete(int id);
 
-	public boolean isValid(String id, String name,boolean isAdmin);
+	public boolean isValidUser( String username, String password,boolean isAdmin);
 
 
 

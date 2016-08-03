@@ -39,6 +39,7 @@ public class UserDetailsTest {
 		List<UserDetails> list = new ArrayList<UserDetails>();
 		list = userDAO.list();
 		for (UserDetails s : list) {
+			
 			System.out.println(s.getUsername()+":"+s.getMobile()+":"+ s.getPassword()+":"+s.getAddress()
 			+":"+s.getEmail()+s.getId());
 

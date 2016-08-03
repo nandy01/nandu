@@ -17,7 +17,11 @@
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	
 <title>SignUp</title>
-
+<style>
+  .error {
+        color: red; font-weight: bold;
+    }
+    </style>
 
 </head>
 <body background=<c:url value="resource/image/dia_carat.jpg"/>>
@@ -49,7 +53,7 @@
 									<input type="text" name="username" id="username"
 										class="form-control input-sm floatlabel"
 										placeholder="User Name" required="true">
-										
+										<form:errors path="username" cssClass="error"/>
 								</div>
 							</div>
 
@@ -57,8 +61,9 @@
                          <div class="panel-body">
                           <div class="form-group">
 							<input type="email" name="email" id="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
-								class="form-control input-sm" placeholder="Email Address"
-								  required="true">
+								class="form-control input-sm" placeholder="Email Address" required="true"
+								  >
+								  <form:errors path="email" cssClass="error"/>
 								  
 						</div>
 						</div>
@@ -67,14 +72,15 @@
 							<input type="password" name="password" id="password"
 								class="form-control input-sm" placeholder="Password"
 								required="true">
+								<form:errors path="password" cssClass="error"/>
 								
 						</div>
 						</div>
 						 <div class="panel-body">
                           <div class="group">
 							<input type="text" name="mobile" id="mobile" min="1" max="10"
-								class="form-control input-sm" placeholder="mobile"
-								required="true">
+								class="form-control input-sm" placeholder="mobile" required="true">
+								<form:errors path="mobile" cssClass="error"/>
 								
 						</div>
 						</div>

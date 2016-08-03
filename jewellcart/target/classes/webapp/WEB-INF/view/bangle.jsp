@@ -15,9 +15,12 @@
 
 <link rel="stylesheet"
 	href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+ 
 </head>
+
 <body>
-<jsp:include page="header.jsp" /> 
+
 <div class="container">
 		
 
@@ -25,8 +28,8 @@
 
 			<div class="col-md-4">
 				<center>
-					<a href="product1?id=w3"class="thumbnail"> <img
-						src="resource/image/b1.jpg" alt="ring"
+					<a href="productinfo?name=joyricko" method=get class="thumbnail"> <img
+						src="resource/image/joyricko.jpg" alt="ring"
 						style="width: 250px; height: 250px"></a>
 					<p>joy ricko</p>
 					<p>Rs.20,000/-</p>
@@ -34,8 +37,8 @@
 			</div>
 			<div class="col-md-4">
 				<center>
-					<a href="product1?id=w3"class="thumbnail"> <img
-						src="resource/image/ee.jpg" alt="ring"
+					<a href="productinfo?name=Freda"class="thumbnail"> <img
+						src="resource/image/Freda.jpg" alt="ring"
 						style="width: 250px; height: 250px"></a>
 					<p>Freda</p>
 					<p>Rs.10,000/-</p>

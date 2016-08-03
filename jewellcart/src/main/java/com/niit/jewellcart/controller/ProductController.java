@@ -1,5 +1,7 @@
 package com.niit.jewellcart.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +12,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.google.gson.Gson;
 import com.niit.jewellcartbackend.dao.CategoryDAO;
@@ -18,6 +22,7 @@ import com.niit.jewellcartbackend.dao.SupplierDAO;
 import com.niit.jewellcartbackend.model.Category;
 import com.niit.jewellcartbackend.model.Product;
 import com.niit.jewellcartbackend.model.Supplier;
+
 
 
 @Controller
@@ -68,6 +73,22 @@ public class ProductController {
 	  return "redirect:/productlist";
 
 	}
+	 
+	 @RequestMapping("/cat")
+	 public String goToProductList(HttpServletRequest req,Model model)
+	 {
+		 
+		 String category=req.getParameter("cate");
+		 
+		int catid= productDAO1.getCateId(category);
+		
+		List<Product> prod=productDAO1.getProd(catid);
+		Gson gson=new Gson();
+		String products=gson.toJson(prod);
+		model.addAttribute("products",products);
+	
+		 return "productinformation";
+	 }
 
 	@RequestMapping("productlist/remove/{id}")
 	   public String removeProduct(@PathVariable("id") int id,ModelMap model) throws Exception{
@@ -94,15 +115,24 @@ public class ProductController {
 
 
 	}
-	/*@RequestMapping("productinfo/{id}")
-    public String getProduct(@PathVariable("id")int id,Model model){
-		 model.addAttribute("product", this.productDAO1.get(id));
-		    model.addAttribute("listProducts", this.productDAO1.list());
-		    return "productinfo";
-		
-		
 	
-}*/
+	@RequestMapping("/productinfo")
+    public String get1(HttpServletRequest req,Model model){
+		String name=req.getParameter("name");
+		Product p=productDAO1.getbyName(name);
+		Gson gson=new Gson();
+		String produ=gson.toJson(p);
+		model.addAttribute("product",produ);
+		System.out.println(produ);
+		String path="C:\\Users\\NANDHINI SELVARAJAN\\Desktop\\jewellcart\\src\\main\\webapp\\WEB-INF\\resource\\image\\";
+		path=path+p.getName()+".jpg";
+		System.out.println(path);
+		model.addAttribute("img",path);
+		return "productinfo";
+        }
+
+	
+	
 }
 			
 			

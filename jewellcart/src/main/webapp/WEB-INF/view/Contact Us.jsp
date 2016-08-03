@@ -6,6 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Contact Us</title>
 <meta charset="utf-8">
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -16,7 +17,10 @@
 </head>
 
 <body  background=<c:url value="resource/image/dia_carat.jpg"/>>
+
+
 <jsp:include page="header.jsp" />
+<form:form action="addcontactus" method="post">
 <div class="container">
         <div class="row centered-form">
         <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
@@ -29,17 +33,17 @@
 			    		<form role="form">
 			    		
 			    		<div class="form-group">
-			    				<input type="email" name="email" id="email" class="form-control input-sm" placeholder="Email Address" required="true">
+			    				<input type="username" name="username" id="username" class="form-control input-sm" placeholder="Username" required="true">
 			    			</div></form>
 			    			<div class="form-group">
-			    						<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password" required="true">
+			    						<input type="email" name="email" id="email" class="form-control input-sm" placeholder="email" required="true">
 			    					</div>
 			    					
 			    					<div class="form-group">
   <label for="comment"><t2>Comment:</t2></label></div>
-  <div class=""><textarea class="form-control" rows="7" id="comment"></textarea></div><br>
+  <div class=""><textarea class="form-control" rows="7" id="comment" name=comment></textarea></div><br>
   <div class="form-group">
-			    			<a href="emailForm"><input type="submit" value="Send Message" class="btn btn-info btn-block"></a>
+			    			<a href=""><input type="submit" value="Send Message" action="addcontactus" class="btn btn-info btn-block"></a>
 			    		
 			    		
 			    	</div>
@@ -50,5 +54,6 @@
 </div>
 </div>
 </div>
+</form:form>
 </body>
 </html>

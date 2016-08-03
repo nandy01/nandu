@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="description"
+	content="SO sticky footer  example snippet. An example HTML, JavaScript and CSS code for Bootstrap." />
 <link
 	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -14,7 +14,6 @@
 <script type='text/javascript'
 	src="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/js/bootstrap.min.js"></script>
 
-</head>
 <style type="text/css">
 html, body {
 	height: 100%;
@@ -33,7 +32,7 @@ html, body {
 	height: 25px;
 }
 #footer {
-	background-color: #1a1a1a;
+	background-color: white;
 }
 /* Lastly, apply responsive CSS fixes as necessary */
 @media ( max-width : 767px) {
@@ -45,10 +44,20 @@ html, body {
 	}
 }
 </style>
+</head>
+
+
 <body>
-<footer
+
+
+	<footer
 		style="position: fixed; bottom: 0px; width: 100%; height: 30px; background-color: black;">
-		<center><p>&copy; 2016 WomenContrivingZone.com</p></center>
-		<p align="right">E-Mart Services &copy; 2016 </p></footer>
+		<font color="white">
+			<p align="center"> Women Contiving Zone &copy; 2016</p>
+		</font>
+	</footer>
+
+
+
 </body>
 </html>

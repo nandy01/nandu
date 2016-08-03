@@ -40,11 +40,11 @@ public class Cart {
 		this.userID = userID;
 	}
 	
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void setPrice(int price) {
-		this.price = price;
+	public void setPrice(double d) {
+		this.price = d;
 	}
 	public int getQuantity() {
 		return quantity;
@@ -65,7 +65,7 @@ public class Cart {
 		this.status = status;
 	}
 	private String productName;
-	private int price;
+	private double price;
 	private int quantity;
 	private char status;
 

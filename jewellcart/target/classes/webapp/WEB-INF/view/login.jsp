@@ -18,16 +18,13 @@
 	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 
 <title>login</title>
-<style>
-  .error {
-        color: red; font-weight: bold;
-    }
-    </style>
+
 </head>
 
 <body background=<c:url value="resource/image/dia_carat.jpg"/>>
 <jsp:include page="header.jsp" /> 
-<form:form action="loginto" commandName="userForm">
+<c:url var="add" value="/process_login"></c:url>
+<form:form action="${add}" method="post">
 <div class="container">
     <div class="row">
         <div class="col-md-4 col-md-offset-4">
@@ -40,16 +37,16 @@
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="Username">Username</label>
                             <div class="col-sm-9">
-                                <input type="text" class="form-control" name="username" placeholder="Username" >
-                                <form:errors path="username" cssClass="error"/>
+                                <input type="text" class="form-control" name="username" placeholder="Username" required="true" >
+                              
                             </div>
                         </div>
                         
                         <div class="form-group">
                             <label  class="col-sm-3 control-label" for="password">password</label>
                             <div class="col-sm-9">
-                                <input type="password" class="form-control" name="password" placeholder="password">
-                             <form:errors path="password" cssClass="error"/>
+                                <input type="password" class="form-control" name="password" placeholder="password" required="true">
+                             
                             </div>
                         </div>
                         <div class="form-group">
@@ -62,7 +59,7 @@
                         </div>
                         <div class="form-group last">
                             <div class="col-sm-offset-3 col-sm-9">
-                                <button type="submit" class="btn btn-success btn-sm">Sign in</button>
+                                <button type="submit" class="btn btn-success btn-sm">Sign in</a></button>
                                 <button type="reset" class="btn btn-default btn-sm">Reset</button>
                             </div>
                         </div>

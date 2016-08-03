@@ -14,9 +14,9 @@
 <script
 	src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 <body>
-
+<form class="form-horizontal" role="form" action="" method="POST">
   <div class="panel-body">
-                    <form class="form-horizontal" role="form" action="" method="POST">
+                    
                         <div class="form-group">
                             <label class="col-sm-3 control-label" for="
                             houseno">HouseNo.</label>
@@ -64,9 +64,12 @@
                         
                         <input type="hidden" name="_flowExecutionKey"/>
                        
+			<a href="${flowExecutionUrl}&_eventId_shippingAddProcessCompleted"><input type="submit" value="Next" class="btn btn-primary" 
+			name="_eventId_shippingAddProcessCompleted"/></a>
+			
                         
-                        <button type="button" name="_eventId_cancel" class="btn btn-danger">Danger</button>
-                        <a href="${flowExecutionUrl}&_eventId_gotoConfirmation">Home</a>
+                        
+                     
                         </form>
 </body>
 </html>

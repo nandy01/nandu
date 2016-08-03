@@ -77,7 +77,7 @@ public class CartDAOImpl implements CartDAO {
 		/*query.executeUpdate();
 		return query.getFirstResult();*/   // Need to check
 		
-		return 26322;
+		return 2322;
 
 	}
 

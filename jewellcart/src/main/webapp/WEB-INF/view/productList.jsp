@@ -40,7 +40,22 @@ function myFunction() {
 	<c:url var="addAction" value="/productlist/add"></c:url>
 
 	<form:form action="${addAction}" commandName="product" method="POST">
-		<table>
+		<table><tr>
+				<td><form:label path="id">
+						<spring:message text="ID" />
+					</form:label></td>
+				<c:choose>
+					<c:when test="${!empty supplier.id}">
+						<td><form:input path="id" disabled="true" readonly="true" />
+						</td>
+					</c:when>
+
+					<c:otherwise>
+						<td><form:input path="id" patttern =".{6,7}" required="true" title="id should contains 6 to 7 characters" /></td>
+					</c:otherwise>
+				</c:choose>
+			<tr>
+			<form:input path="id" hidden="true"  />
 			
 				<td><form:label path="name">
 						<spring:message text="Name" />
@@ -75,7 +90,7 @@ function myFunction() {
 				<td><form:select path="category.name" items="${categoryList}" itemValue="name" itemLabel="name" /></td>
 			</tr>
 			
-			<tr>
+		<tr>
 				<td colspan="2"><c:if test="${!empty product.name}">
 						<input type="submit"
 							value="<spring:message text="Edit Product"/>" />
@@ -86,7 +101,12 @@ function myFunction() {
 		</table>
 		
 					<a href="Upload">Upload</a>
-				
+				File to upload: <input type="file" name="file">
+				Name: <input type="text" name="name">
+ upload form
+ 
+		<input type="submit" value="Upload"> Press here to upload the file!
+ 
 	</form:form>
 	<br>
 
